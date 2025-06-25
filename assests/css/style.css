@@ -1,9 +1,3 @@
-/*
-Author       : Dreamguys
-Template Name: PreClinic - Medical and Hospital Admin Template
-Version      : 1.0
-*/
-
 /*============================
  [Table of CSS]
 
@@ -49,7 +43,7 @@ Version      : 1.0
 40. Chat Sidebar
 41. Gallery
 42. Responsive
-
+43. Footer
 ========================================*/
 
 /*-----------------
@@ -57,6 +51,21 @@ Version      : 1.0
 -----------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700');
+
+
+:root {
+    --blue: #3498db;
+    --black: #444;
+    --light-color: #111;
+}
+
+* {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
 	height: 100%;
 }
@@ -168,6 +177,86 @@ textarea.form-control {
 .list-group-item {
 	border: 1px solid #eaeaea;
 }
+
+	/* ===================================== Our Carousel CSS ================================== */
+ .carousel-item {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .carousel-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6); /* Black overlay */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+
+    .carousel-caption-content h1 {
+      font-weight: bold;
+      font-size: 3rem;
+    }
+
+    .carousel-caption-content p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+	/* ===================================== Our Blog CSS ================================== */
+.our-blog {
+  padding: 80px 50px;
+  background-color: #FAFAFA;
+  padding-bottom: 100px; }
+  @media screen and (max-width: 940px) {
+    .our-blog {
+      padding: 50px 10px; } }
+  @media screen and (max-width: 600px) {
+    .our-blog {
+      padding: 20px 10px; }
+      .our-blog .blog-cont {
+        padding: 0px; }
+      .our-blog .blog-smk {
+        padding: 0px; } }
+  .our-blog .blog-cont {
+    float: none;
+    margin: auto; }
+  .our-blog .blog-single {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px; }
+    .our-blog .blog-single .figure {
+      margin-bottom: 0px; }
+  .our-blog .blog-single-det {
+    margin: auto;
+    padding: 20px;
+    z-index: 99;
+    box-shadow: 0 2px 6px 0 rgba(218, 218, 253, 0.65), 0 2px 6px 0 rgba(206, 206, 238, 0.54);
+    width: 90%;
+    position: relative;
+    margin-top: -80px;
+    background-color: #FFF; }
+    .our-blog .blog-single-det .btn {
+      margin-top: 10px;
+      margin-bottom: 10px; }
+    .our-blog .blog-single-det span {
+      font-size: 13px;
+      color: #b5316a; }
+    .our-blog .blog-single-det h6 {
+      font-size: 1.3rem; }
+    .our-blog .blog-single-det p {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 1rem; }
 
 /*-----------------
 	2. Table
@@ -1438,7 +1527,9 @@ ul.chat-user-total li i.old-users {
 .take-btn {
     min-width: 80px;
 }
-
+.login-btn {
+	background-color: #009efb;
+}
 /*-----------------
 	10. Activity
 -----------------------*/
@@ -4914,3 +5005,70 @@ blockquote p {
 		margin-bottom: 10px;
 	}
 }
+
+
+
+/*-----------------
+	43. Footer
+-----------------------*/
+
+section{
+    padding:2rem 9%;
+}
+
+/* section:nth-child(even){
+    background: #f5f5f5;
+} */
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 1.5rem;
+    color: var(--black);
+    padding-bottom: 1rem;
+    text-transform: capitalize;
+}
+
+.footer .box-container .box a {
+    display: block;
+    font-size: 1rem;
+    color: var(--light-color);
+    padding: 0.5rem 0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer .box-container .box a i {
+    padding-right: 0.5rem;
+    color: var(--blue);
+}
+
+.footer .box-container .box a:hover {
+    color: var(--blue);
+    transform: translateX(5px);
+}
+
+.footer .box-container .box a:hover i {
+    padding-right: 1rem;
+}
+
+.footer .credit {
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--light-color);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer .credit span {
+    color: var(--blue);
+    font-weight: bold;
+}
+
+
+
