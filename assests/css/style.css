@@ -258,7 +258,14 @@ textarea.form-control {
       margin-bottom: 15px;
       font-size: 1rem; }
              
-/*OPENING HOURS AND BOOK APPOINTMENT*/
+  .service-box {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .service-box:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
 
 
 /*-----------------
