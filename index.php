@@ -19,22 +19,12 @@ if (isset($_POST['submit'])) {
     <title>CARE - Hospital Management</title>
     <link rel="shortcut icon" href="./assests/img/favicon.ico">
 
-    <!-- CSS -->
+    <!-- CSS Libraries -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <link href="./assests/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="plugin/owl-carouse/owl.carousel.min.css">
-    <link rel="stylesheet" href="plugin/owl-carouse/owl.theme.default.min.css">
-    <link rel="stylesheet" href="plugin/jquery-ui/jquery-ui.min.css">
-    <link rel="stylesheet" href="plugin/process-bar/tox-progress.css">
-    <link rel="stylesheet" href="plugin/animsition/css/animate.css">
-    <link rel="stylesheet" href="plugin/jquery-ui/jquery-ui.min.css">
-    <link rel="stylesheet" href="plugin/mediaelement/mediaelementplayer.css">
-    <link rel="stylesheet" href="plugin/datetimepicker/bootstrap-datepicker3.css">
-    <link rel="stylesheet" href="plugin/datetimepicker/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="plugin/lightgallery/lightgallery.css">
+    <link rel="stylesheet" href="./assests/css/style.css">
 </head>
 
 <body>
@@ -56,7 +46,9 @@ if (isset($_POST['submit'])) {
                         <li class="nav-item"><a class="nav-link" href="#about_us">About Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact_us">Contact Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
-                        <li class="nav-item"><a class="nav-link" href="patient/book_appointment.php">Book Appointment</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#cities">Cities</a></li>
+                        <li class="nav-item"><a class="nav-link" href="patient/book_appointment.php">Book
+                                Appointment</a></li>
                     </ul>
                     <div class="d-lg-block">
                         <a class="btn btn-primary" href="#logins">Login</a>
@@ -75,7 +67,8 @@ if (isset($_POST['submit'])) {
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active" style="background-image: url('./assests/images/home1/banner/background.jpg');">
+                <div class="carousel-item active"
+                    style="background-image: url('./assests/images/home1/banner/background.jpg');">
                     <div class="carousel-overlay">
                         <div class="carousel-caption-content">
                             <h1 class="animated bounceInDown">LET US PROTECT YOUR HEALTH</h1>
@@ -84,7 +77,8 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('./assests/images/home1/banner/background1.jpg');">
+                <div class="carousel-item"
+                    style="background-image: url('./assests/images/home1/banner/background1.jpg');">
                     <div class="carousel-overlay">
                         <div class="carousel-caption-content">
                             <h1 class="animated bounceInDown">LET US PROTECT YOUR HEALTH</h1>
@@ -93,7 +87,8 @@ if (isset($_POST['submit'])) {
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('./assests/images/home1/banner/background2.jpg');">
+                <div class="carousel-item"
+                    style="background-image: url('./assests/images/home1/banner/background2.jpg');">
                     <div class="carousel-overlay">
                         <div class="carousel-caption-content">
                             <h1 class="animated bounceInDown">LET US PROTECT YOUR HEALTH</h1>
@@ -112,13 +107,64 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
 
+
+    <!-- Logins  -->
+
+    <section id="logins" class="our-blog container-fluid">
+        <div class="container">
+            <div class="inner-title">
+                <h2 class="my-2" style="text-align:center;">Logins</h2>
+            </div>
+            <div class="col-sm-12 blog-cont">
+                <div class="row no-margin">
+                    <div class="col-sm-4 blog-smk">
+                        <div class="blog-single">
+                            <img class="img-thumbnail" src="./assests/images/patient.jpg" alt="">
+                            <div class="blog-single-det">
+                                <h6>Patient Login</h6>
+                                <a href="hms/user-login.php" target="_blank">
+                                    <button class="btn btn-primary btn-sm">Click Here</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 blog-smk">
+                        <div class="blog-single">
+                            <img class="img-thumbnail" src="./assests/images/doctor.jpg" alt="">
+                            <div class="blog-single-det">
+                                <h6>Doctors login</h6>
+                                <a href="hms/doctor" target="_blank">
+                                    <button class="btn btn-primary btn-sm">Click Here</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 blog-smk">
+                        <div class="blog-single">
+                            <img class="img-thumbnail" src="./assests/images/admin.jpg" alt="">
+                            <div class="blog-single-det">
+                                <h6>Admin Login</h6>
+                                <a href="hms/admin" target="_blank">
+                                    <button class="btn btn-primary btn-sm">Click Here</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section id="services" class="py-5 bg-white">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-down">
                 <h2 class="fw-bold">Our Healthcare Services</h2>
                 <p class="text-muted mx-auto" style="max-width: 600px;">
-                    We provide comprehensive healthcare services designed to ensure patient satisfaction, safety, and quality care.
+                    We provide comprehensive healthcare services designed to ensure patient satisfaction, safety, and
+                    quality care.
                 </p>
             </div>
             <div class="row g-4">
@@ -132,7 +178,6 @@ if (isset($_POST['submit'])) {
                         <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
                     </div>
                 </div>
-
                 <div class="col-md-4" data-aos="fade-up">
                     <div class="service-box text-center p-4 shadow-sm rounded bg-light">
                         <div class="service-icon mb-3">
@@ -143,7 +188,6 @@ if (isset($_POST['submit'])) {
                         <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
                     </div>
                 </div>
-
                 <div class="col-md-4" data-aos="fade-up">
                     <div class="service-box text-center p-4 shadow-sm rounded bg-light">
                         <div class="service-icon mb-3">
@@ -154,7 +198,6 @@ if (isset($_POST['submit'])) {
                         <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
                     </div>
                 </div>
-
                 <div class="col-md-4" data-aos="fade-up">
                     <div class="service-box text-center p-4 shadow-sm rounded bg-light">
                         <div class="service-icon mb-3">
@@ -165,7 +208,6 @@ if (isset($_POST['submit'])) {
                         <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
                     </div>
                 </div>
-
                 <div class="col-md-4" data-aos="fade-up">
                     <div class="service-box text-center p-4 shadow-sm rounded bg-light">
                         <div class="service-icon mb-3">
@@ -176,7 +218,6 @@ if (isset($_POST['submit'])) {
                         <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
                     </div>
                 </div>
-
                 <div class="col-md-4" data-aos="fade-up">
                     <div class="service-box text-center p-4 shadow-sm rounded bg-light">
                         <div class="service-icon mb-3">
@@ -190,8 +231,310 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </section>
-    
-    <section id="contact_us" class="py-5 bg-light" id="contact">
+    <!-- About Us Section -->
+    <section id="about_us" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">About <span class="text-primary">Us</span></h2>
+            </div>
+
+            <div class="row align-items-center">
+                <!-- Image -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="./assests/images/about.jpg" alt="About Us"
+                        class="img-fluid animate__animated animate__fadeInLeft">
+                </div>
+
+                <!-- Content -->
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">Providing the Best Healthcare Solutions</h3>
+                    <p>
+                        We are committed to delivering high-quality healthcare services with compassion, care, and
+                        cutting-edge technology. Our hospital management system is designed to simplify operations,
+                        improve patient experiences, and support doctors with efficient tools.
+                    </p>
+                    <p>
+                        From appointment scheduling to patient record management, our goal is to make healthcare
+                        accessible, reliable, and efficient for everyone. Our dedicated team works round the clock to
+                        ensure that patients get the best medical support possible.
+                    </p>
+                    <a href="#services" class="btn btn-outline-primary">
+                        Learn More <i class="fas fa-chevron-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-5 bg-white">
+        <div class="row">
+            <!-- Section Heading -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Latest News</h2>
+                <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, eligendi!
+                </p>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="blog grid-blog">
+                    <div class="blog-image">
+                        <a href="blog-details.html"><img class="img-fluid" src="./assests/img/blog/blog-01.jpg"
+                                alt=""></a>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title"><a href="blog-details.html">Do You Know the ABCs of Health Care?</a></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore etmis dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco sit laboris.</p>
+                        <a href="blog-details.html" class="read-more"><i class="fa fa-long-arrow-right"></i> Read
+                            More</a>
+                        <div class="blog-info clearfix">
+                            <div class="post-left">
+                                <ul>
+                                    <li><a href="#."><i class="fa fa-calendar"></i> <span>December 6, 2017</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="post-right"><a href="#."><i class="fa fa-heart-o"></i>21</a> <a href="#."><i
+                                        class="fa fa-eye"></i>8</a> <a href="#."><i class="fa fa-comment-o"></i>17</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="blog grid-blog">
+                    <div class="blog-image">
+                        <a href="blog-details.html"><img class="img-fluid" src="./assests/img/blog/blog-02.jpg"
+                                alt=""></a>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title"><a href="blog-details.html">Do You Know the ABCs of Health Care?</a></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore etmis dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco sit laboris.</p>
+                        <a href="blog-details.html" class="read-more"><i class="fa fa-long-arrow-right"></i> Read
+                            More</a>
+                        <div class="blog-info clearfix">
+                            <div class="post-left">
+                                <ul>
+                                    <li><a href="#."><i class="fa fa-calendar"></i> <span>December 6, 2017</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="post-right"><a href="#."><i class="fa fa-heart-o"></i>21</a> <a href="#."><i
+                                        class="fa fa-eye"></i>8</a> <a href="#."><i class="fa fa-comment-o"></i>17</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="blog grid-blog">
+                    <div class="blog-image">
+                        <a href="blog-details.html"><img class="img-fluid" src="./assests/img/blog/blog-03.jpg"
+                                alt=""></a>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title"><a href="blog-details.html">Do You Know the ABCs of Health Care?</a></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore etmis dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco sit laboris.</p>
+                        <a href="blog-details.html" class="read-more"><i class="fa fa-long-arrow-right"></i> Read
+                            More</a>
+                        <div class="blog-info clearfix">
+                            <div class="post-left">
+                                <ul>
+                                    <li><a href="#."><i class="fa fa-calendar"></i> <span>December 6, 2017</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="post-right"><a href="#."><i class="fa fa-heart-o"></i>21</a> <a href="#."><i
+                                        class="fa fa-eye"></i>8</a> <a href="#."><i class="fa fa-comment-o"></i>17</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- City Section-->
+    <section id="cities" class="py-5 bg-light">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Healthcare Services in Your <span class="text-primary">City</span></h2>
+      <p class="text-muted mx-auto" style="max-width: 600px;">
+        CARE Group connects you with hospitals, clinics, and doctors in your city. Find specialists, view their profiles, and book appointments online without waiting in queues.
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="nav justify-content-center mb-4" id="cityTabs" role="tablist">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#karachi">Karachi</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lahore">Lahore</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#islamabad">Islamabad</button>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="cityTabsContent">
+      
+      <!-- Karachi -->
+      <div class="tab-pane fade show active" id="karachi">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="./assests/images/cities/city (7).jpg" class="card-img-top" alt="Care Hospital">
+              <div class="card-body">
+                <h5 class="card-title">Care Hospital</h5>
+                <p class="card-text">Top-rated multi-specialty hospital offering advanced medical services.</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Explore</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="./assests/images/cities/city (6).jpg" class="card-img-top" alt="City Care Clinic">
+              <div class="card-body">
+                <h5 class="card-title">City Care Clinic</h5>
+                <p class="card-text">Leading cardiologists available for consultations and checkups.</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Explore</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="./assests/images/cities/city (5).jpg" class="card-img-top" alt="Smile Dental Care">
+              <div class="card-body">
+                <h5 class="card-title">Smile Dental Care</h5>
+                <p class="card-text">Best dental clinic in Karachi with experienced dental surgeons.</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">Explore</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lahore -->
+      <div class="tab-pane fade" id="lahore">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm position-relative">
+              <img src="./assests/images/cities/city (4).jpg" class="card-img-top" alt="Care Hospital">
+              <div class="card-body">
+                <h5 class="card-title">Care Hospital</h5>
+                <p class="card-text">Comprehensive cancer treatment and specialty healthcare services.</p>
+                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm position-relative">
+              <img src="./assests/images/cities/city (3).jpg" class="card-img-top" alt="Lahore General Care Hospital">
+              <div class="card-body">
+                <h5 class="card-title">Lahore General Care Hospital</h5>
+                <p class="card-text">Affordable medical services and specialist doctors available.</p>
+                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Islamabad -->
+      <div class="tab-pane fade" id="islamabad">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm position-relative">
+              <img src="./assests/images/cities/city (2).jpg" class="card-img-top" alt="Care Hospital">
+              <div class="card-body">
+                <h5 class="card-title">Care Hospital</h5>
+                <p class="card-text">Leading hospital in Islamabad with 24/7 emergency care.</p>
+                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm position-relative">
+              <img src="./assests/images/cities/city (1).jpg" class="card-img-top" alt="Islamabad Medical Care Center">
+              <div class="card-body">
+                <h5 class="card-title">Islamabad Medical Care Center</h5>
+                <p class="card-text">Experienced general physicians and specialists for all needs.</p>
+                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="py-5 bg-white">
+        <div class="container">
+            <!-- Heading -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold"> <span class="text-primary">Make Appointment</span> Now</h2>
+            </div>
+
+            <div class="row align-items-center">
+                <!-- Image Section -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="./assests/images/appointment.png" alt="Appointment"
+                        class="img-fluid animate__animated animate__fadeInLeft">
+                </div>
+
+                <!-- Form Section -->
+                <div class="col-md-6">
+                    <div class="p-4 bg-white shadow-sm rounded">
+                        <!-- PHP Message -->
+                        <?php
+                        if (isset($message)) {
+                            foreach ($message as $msg) {
+                                echo '<div class="alert alert-info py-1 px-2 mb-3">' . $msg . '</div>';
+                            }
+                        }
+                        ?>
+
+                        <!-- Form -->
+                        <h3 class="fw-bold mb-3">Make an Appointment</h3>
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                            <div class="mb-3">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" name="number" class="form-control" placeholder="Your Number" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="date" name="date" class="form-control" required>
+                            </div>
+                            <div class="d-grid">
+                                <input type="submit" name="submit" value="Book Appointment" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Us Section -->
+    <section id="contact_us" class="py-5 bg-light">
         <div class="container">
             <!-- Section Heading -->
             <div class="text-center mb-5">
@@ -278,51 +621,14 @@ if (isset($_POST['submit'])) {
 
         </div>
 
-        <div class="credit"> Created by <span>CARE & Team</span> | All Rights Reserved </div>
+        <div class="credit"> Created by <span>CARE & Team</span> | All Rights Reserved &copy;</div>
 
     </section>
-
-
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+<!-- JS Libraries -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/Chart.bundle.js"></script>
-<script src="assets/js/chart.js"></script>
-<script src="assets/js/app.js"></script>
-<script src="assets/plugins/scroll-nav/js/jquery.easing.min.js"></script>
-<script src="assets/plugins/scroll-nav/js/scrolling-nav.js"></script>
-<script src="assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
-<script src="plugin/jquery/jquery-2.0.2.min.js"></script>
-<script src="plugin/jquery-ui/jquery-ui.min.js"></script>
-<script src="plugin/bootstrap/js/bootstrap.js"></script>
-<script src="plugin/process-bar/tox-progress.js"></script>
-<script src="plugin/waypoint/jquery.waypoints.min.js"></script>
-<script src="plugin/counterup/jquery.counterup.min.js"></script>
-<script src="plugin/owl-carouse/owl.carousel.min.js"></script>
-<script src="plugin/jquery-ui/jquery-ui.min.js"></script>
-<script src="plugin/mediaelement/mediaelement-and-player.js"></script>
-<script src="plugin/masonry/masonry.pkgd.min.js"></script>
-<script src="plugin/datetimepicker/moment.min.js"></script>
-<script src="plugin/datetimepicker/bootstrap-datepicker.min.js"></script>
-<script src="plugin/datetimepicker/bootstrap-datepicker.tr.min.js"></script>
-<script src="plugin/datetimepicker/bootstrap-datetimepicker.js"></script>
-<script src="plugin/datetimepicker/bootstrap-datetimepicker.fr.js"></script>
-
-<script src="plugin/lightgallery/picturefill.min.js"></script>
-<script src="plugin/lightgallery/lightgallery.js"></script>
-<script src="plugin/lightgallery/lg-pager.js"></script>
-<script src="plugin/lightgallery/lg-autoplay.js"></script>
-<script src="plugin/lightgallery/lg-fullscreen.js"></script>
-<script src="plugin/lightgallery/lg-zoom.js"></script>
-<script src="plugin/lightgallery/lg-hash.js"></script>
-<script src="plugin/lightgallery/lg-share.js"></script>
-<script src="plugin/sticky/jquery.sticky.js"></script>
-
+<script>
+    AOS.init();
+</script>
+</body>
 </html>
