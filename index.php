@@ -579,6 +579,69 @@ if (isset($_POST['submit'])) {
         </div>
     </section>
 
+
+    <section id="doctors" class="py-5 bg-light">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Our <span class="text-primary">Doctors</span></h2>
+      <p class="text-muted mx-auto" style="max-width: 600px;">
+        Meet our expert team of highly qualified and experienced doctors, committed to delivering the best medical care and treatment for you.
+      </p>
+    </div>
+
+    <!-- Doctors Grid -->
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+          <img src="./assests/images/doctors/doctor-thumb-10.jpg" class="rounded-circle mx-auto mt-2" alt="Doctor" width="150" height="150">
+          <div class="card-body">
+            <h5 class="card-title">Dr. Ayesha Khan</h5>
+            <p class="text-muted mb-2">Cardiologist</p>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f text-primary"></i></a>
+              <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter text-info"></i></a>
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram text-danger"></i></a>
+              <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin text-secondary"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+          <img src="./assests/images/doctors/doctor-thumb-12.jpg" class="rounded-circle mx-auto mt-2" alt="Doctor" width="150" height="150">
+          <div class="card-body">
+            <h5 class="card-title">Dr. Ali Raza</h5>
+            <p class="text-muted mb-2">Neurologist</p>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f text-primary"></i></a>
+              <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter text-info"></i></a>
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram text-danger"></i></a>
+              <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin text-secondary"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" >
+        <div class="card text-center shadow-sm">
+          <img src="./assests/images/doctors/doctor-thumb-02.jpg" class="rounded-circle mx-auto mt-2" alt="Doctor" width="150" height="150">
+          <div class="card-body">
+            <h5 class="card-title">Dr. Fatima Noor</h5>
+            <p class="text-muted mb-2">Dermatologist</p>
+           <div class="d-flex justify-content-center gap-3">
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f text-primary"></i></a>
+              <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter text-info"></i></a>
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram text-danger"></i></a>
+              <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin text-secondary"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
     <!-- ################# #Footer Starts Here  #######################--->
     <section class="footer">
 
