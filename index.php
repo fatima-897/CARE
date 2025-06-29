@@ -362,122 +362,140 @@ if (isset($_POST['submit'])) {
 
     <!-- City Section-->
     <section id="cities" class="py-5 bg-light">
-  <div class="container">
-    <!-- Section Heading -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Healthcare Services in Your <span class="text-primary">City</span></h2>
-      <p class="text-muted mx-auto" style="max-width: 600px;">
-        CARE Group connects you with hospitals, clinics, and doctors in your city. Find specialists, view their profiles, and book appointments online without waiting in queues.
-      </p>
-    </div>
+        <div class="container">
+            <!-- Section Heading -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Healthcare Services in Your <span class="text-primary">City</span></h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    CARE Group connects you with hospitals, clinics, and doctors in your city. Find specialists, view
+                    their profiles, and book appointments online without waiting in queues.
+                </p>
+            </div>
 
-    <!-- Tabs -->
-    <ul class="nav justify-content-center mb-4" id="cityTabs" role="tablist">
-      <li class="nav-item">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#karachi">Karachi</button>
-      </li>
-      <li class="nav-item">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lahore">Lahore</button>
-      </li>
-      <li class="nav-item">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#islamabad">Islamabad</button>
-      </li>
-    </ul>
+            <!-- Tabs -->
+            <ul class="nav justify-content-center mb-4" id="cityTabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#karachi">Karachi</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lahore">Lahore</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#islamabad">Islamabad</button>
+                </li>
+            </ul>
 
-    <!-- Tab Content -->
-    <div class="tab-content" id="cityTabsContent">
-      
-      <!-- Karachi -->
-      <div class="tab-pane fade show active" id="karachi">
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-              <img src="./assests/images/cities/city (7).jpg" class="card-img-top" alt="Care Hospital">
-              <div class="card-body">
-                <h5 class="card-title">Care Hospital</h5>
-                <p class="card-text">Top-rated multi-specialty hospital offering advanced medical services.</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">Explore</a>
-              </div>
+            <!-- Tab Content -->
+            <div class="tab-content" id="cityTabsContent">
+
+                <!-- Karachi -->
+                <div class="tab-pane fade show active" id="karachi">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="./assests/images/cities/city (7).jpg" class="card-img-top"
+                                    alt="Care Hospital">
+                                <div class="card-body">
+                                    <h5 class="card-title">Care Hospital</h5>
+                                    <p class="card-text">Top-rated multi-specialty hospital offering advanced medical
+                                        services.</p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="./assests/images/cities/city (6).jpg" class="card-img-top"
+                                    alt="City Care Clinic">
+                                <div class="card-body">
+                                    <h5 class="card-title">City Care Clinic</h5>
+                                    <p class="card-text">Leading cardiologists available for consultations and checkups.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="./assests/images/cities/city (5).jpg" class="card-img-top"
+                                    alt="Smile Dental Care">
+                                <div class="card-body">
+                                    <h5 class="card-title">Smile Dental Care</h5>
+                                    <p class="card-text">Best dental clinic in Karachi with experienced dental surgeons.
+                                    </p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lahore -->
+                <div class="tab-pane fade" id="lahore">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm position-relative">
+                                <img src="./assests/images/cities/city (4).jpg" class="card-img-top"
+                                    alt="Care Hospital">
+                                <div class="card-body">
+                                    <h5 class="card-title">Care Hospital</h5>
+                                    <p class="card-text">Comprehensive cancer treatment and specialty healthcare
+                                        services.</p>
+                                    <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Coming
+                                        Soon</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm position-relative">
+                                <img src="./assests/images/cities/city (3).jpg" class="card-img-top"
+                                    alt="Lahore General Care Hospital">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lahore General Care Hospital</h5>
+                                    <p class="card-text">Affordable medical services and specialist doctors available.
+                                    </p>
+                                    <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Coming
+                                        Soon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Islamabad -->
+                <div class="tab-pane fade" id="islamabad">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm position-relative">
+                                <img src="./assests/images/cities/city (2).jpg" class="card-img-top"
+                                    alt="Care Hospital">
+                                <div class="card-body">
+                                    <h5 class="card-title">Care Hospital</h5>
+                                    <p class="card-text">Leading hospital in Islamabad with 24/7 emergency care.</p>
+                                    <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Coming
+                                        Soon</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm position-relative">
+                                <img src="./assests/images/cities/city (1).jpg" class="card-img-top"
+                                    alt="Islamabad Medical Care Center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Islamabad Medical Care Center</h5>
+                                    <p class="card-text">Experienced general physicians and specialists for all needs.
+                                    </p>
+                                    <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Coming
+                                        Soon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-              <img src="./assests/images/cities/city (6).jpg" class="card-img-top" alt="City Care Clinic">
-              <div class="card-body">
-                <h5 class="card-title">City Care Clinic</h5>
-                <p class="card-text">Leading cardiologists available for consultations and checkups.</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">Explore</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-              <img src="./assests/images/cities/city (5).jpg" class="card-img-top" alt="Smile Dental Care">
-              <div class="card-body">
-                <h5 class="card-title">Smile Dental Care</h5>
-                <p class="card-text">Best dental clinic in Karachi with experienced dental surgeons.</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">Explore</a>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-
-      <!-- Lahore -->
-      <div class="tab-pane fade" id="lahore">
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100 shadow-sm position-relative">
-              <img src="./assests/images/cities/city (4).jpg" class="card-img-top" alt="Care Hospital">
-              <div class="card-body">
-                <h5 class="card-title">Care Hospital</h5>
-                <p class="card-text">Comprehensive cancer treatment and specialty healthcare services.</p>
-                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Coming Soon</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100 shadow-sm position-relative">
-              <img src="./assests/images/cities/city (3).jpg" class="card-img-top" alt="Lahore General Care Hospital">
-              <div class="card-body">
-                <h5 class="card-title">Lahore General Care Hospital</h5>
-                <p class="card-text">Affordable medical services and specialist doctors available.</p>
-                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Coming Soon</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Islamabad -->
-      <div class="tab-pane fade" id="islamabad">
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100 shadow-sm position-relative">
-              <img src="./assests/images/cities/city (2).jpg" class="card-img-top" alt="Care Hospital">
-              <div class="card-body">
-                <h5 class="card-title">Care Hospital</h5>
-                <p class="card-text">Leading hospital in Islamabad with 24/7 emergency care.</p>
-                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Coming Soon</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100 shadow-sm position-relative">
-              <img src="./assests/images/cities/city (1).jpg" class="card-img-top" alt="Islamabad Medical Care Center">
-              <div class="card-body">
-                <h5 class="card-title">Islamabad Medical Care Center</h5>
-                <p class="card-text">Experienced general physicians and specialists for all needs.</p>
-                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Coming Soon</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <!-- Appointment Section -->
@@ -581,66 +599,82 @@ if (isset($_POST['submit'])) {
 
 
     <section id="doctors" class="py-5 bg-light">
-  <div class="container">
-    <!-- Section Heading -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Our <span class="text-primary">Doctors</span></h2>
-      <p class="text-muted mx-auto" style="max-width: 600px;">
-        Meet our expert team of highly qualified and experienced doctors, committed to delivering the best medical care and treatment for you.
-      </p>
-    </div>
+        <div class="container">
+            <!-- Section Heading -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our <span class="text-primary">Doctors</span></h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">
+                    Meet our expert team of highly qualified and experienced doctors, committed to delivering the best
+                    medical care and treatment for you.
+                </p>
+            </div>
 
-    <!-- Doctors Grid -->
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card text-center shadow-sm">
-          <img src="./assests/images/doctors/doctor-thumb-10.jpg" class="rounded-circle mx-auto mt-2" alt="Doctor" width="150" height="150">
-          <div class="card-body">
-            <h5 class="card-title">Dr. Ayesha Khan</h5>
-            <p class="text-muted mb-2">Cardiologist</p>
-            <div class="d-flex justify-content-center gap-3">
-              <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f text-primary"></i></a>
-              <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter text-info"></i></a>
-              <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram text-danger"></i></a>
-              <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin text-secondary"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card text-center shadow-sm">
-          <img src="./assests/images/doctors/doctor-thumb-12.jpg" class="rounded-circle mx-auto mt-2" alt="Doctor" width="150" height="150">
-          <div class="card-body">
-            <h5 class="card-title">Dr. Ali Raza</h5>
-            <p class="text-muted mb-2">Neurologist</p>
-            <div class="d-flex justify-content-center gap-3">
-              <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f text-primary"></i></a>
-              <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter text-info"></i></a>
-              <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram text-danger"></i></a>
-              <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin text-secondary"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" >
-        <div class="card text-center shadow-sm">
-          <img src="./assests/images/doctors/doctor-thumb-02.jpg" class="rounded-circle mx-auto mt-2" alt="Doctor" width="150" height="150">
-          <div class="card-body">
-            <h5 class="card-title">Dr. Fatima Noor</h5>
-            <p class="text-muted mb-2">Dermatologist</p>
-           <div class="d-flex justify-content-center gap-3">
-              <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f text-primary"></i></a>
-              <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter text-info"></i></a>
-              <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram text-danger"></i></a>
-              <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin text-secondary"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
+            <!-- Doctors Grid -->
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card text-center shadow-sm">
+                        <img src="./assests/images/doctors/doctor-thumb-10.jpg" class="rounded-circle mx-auto mt-2"
+                            alt="Doctor" width="150" height="150">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Ayesha Khan</h5>
+                            <p class="text-muted mb-2">Cardiologist</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i
+                                        class="fab fa-facebook-f text-primary"></i></a>
+                                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i
+                                        class="fab fa-twitter text-info"></i></a>
+                                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i
+                                        class="fab fa-instagram text-danger"></i></a>
+                                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i
+                                        class="fab fa-linkedin text-secondary"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center shadow-sm">
+                        <img src="./assests/images/doctors/doctor-thumb-12.jpg" class="rounded-circle mx-auto mt-2"
+                            alt="Doctor" width="150" height="150">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Ali Raza</h5>
+                            <p class="text-muted mb-2">Neurologist</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i
+                                        class="fab fa-facebook-f text-primary"></i></a>
+                                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i
+                                        class="fab fa-twitter text-info"></i></a>
+                                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i
+                                        class="fab fa-instagram text-danger"></i></a>
+                                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i
+                                        class="fab fa-linkedin text-secondary"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center shadow-sm">
+                        <img src="./assests/images/doctors/doctor-thumb-02.jpg" class="rounded-circle mx-auto mt-2"
+                            alt="Doctor" width="150" height="150">
+                        <div class="card-body">
+                            <h5 class="card-title">Dr. Fatima Noor</h5>
+                            <p class="text-muted mb-2">Dermatologist</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i
+                                        class="fab fa-facebook-f text-primary"></i></a>
+                                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i
+                                        class="fab fa-twitter text-info"></i></a>
+                                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i
+                                        class="fab fa-instagram text-danger"></i></a>
+                                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i
+                                        class="fab fa-linkedin text-secondary"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    </div>
-  </div>
-</section>
+            </div>
+        </div>
+    </section>
 
     <!-- ################# #Footer Starts Here  #######################--->
     <section class="footer">
@@ -687,11 +721,12 @@ if (isset($_POST['submit'])) {
         <div class="credit"> Created by <span>CARE & Team</span> | All Rights Reserved &copy;</div>
 
     </section>
-<!-- JS Libraries -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-    AOS.init();
-</script>
+    <!-- JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
+
 </html>
