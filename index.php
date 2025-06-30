@@ -597,7 +597,7 @@ if (isset($_POST['submit'])) {
         </div>
     </section>
 
-
+    <!-- Doctors Section -->
     <section id="doctors" class="py-5 bg-light">
         <div class="container">
             <!-- Section Heading -->
