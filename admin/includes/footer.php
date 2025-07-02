@@ -1,41 +1,31 @@
-<!-- start: MAIN JAVASCRIPTS -->
-<script src="../vendor/jquery/jquery.min.js"></script>
-<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="../vendor/modernizr/modernizr.js"></script>
+<!-- Optional: Custom Scripts -->
+<script src="../assets/js/main.js"></script>
+
+<!-- JS Dependencies (Bootstrap 5 + jQuery 3.6) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Optional Vendor Plugins (only keep if needed) -->
+<!-- Remove any you’re not using -->
 <script src="../vendor/jquery-cookie/jquery.cookie.js"></script>
 <script src="../vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <script src="../vendor/switchery/switchery.min.js"></script>
-<!-- end: MAIN JAVASCRIPTS -->
-<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-<script src="../vendor/maskedinput/jquery.maskedinput.min.js"></script>
-<script src="../vendor/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
-<script src="../vendor/autosize/autosize.min.js"></script>
-<script src="../vendor/selectFx/classie.js"></script>
-<script src="../vendor/selectFx/selectFx.js"></script>
-<script src="../vendor/select2/select2.min.js"></script>
 <script src="../vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 <script src="../vendor/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
-<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-<!-- start: CLIP-TWO JAVASCRIPTS -->
-<script src="../assets/js/main.js"></script>
-<!-- start: JavaScript Event Handlers for this page -->
-<script src="../assets/js/form-elements.js"></script>
-<div class="sidebar-overlay" data-reff=""></div>
-<script src="../assets/js/jquery-3.2.1.min.js"></script>
-<script src="../assets/js/popper.min.js"></script>
-<script src="../assets/js/bootstrap.min.js"></script>
-<script src="../assets/js/jquery.slimscroll.js"></script>
-<script src="../assets/js/Chart.bundle.js"></script>
-<script src="../assets/js/chart.js"></script>
-<script src="../assets/js/app.js"></script>
-<script>
-	jQuery(document).ready(function () {
-		Main.init();
-		FormElements.init();
-	});
-</script>
-<!-- end: JavaScript Event Handlers for this page -->
-<!-- end: CLIP-TWO JAVASCRIPTS -->
-</body>
+<script src="../vendor/select2/select2.min.js"></script>
+<script src="../vendor/autosize/autosize.min.js"></script>
 
-</html>
+<!-- Page-Specific Scripts (optional, wrap with checks) -->
+<script src="../assets/js/form-elements.js"></script>
+<script src="../assets/js/chart.js"></script>
+
+<!-- Init Functions (check before calling to prevent JS errors) -->
+<script>
+    $(document).ready(function () {
+        if (typeof Main !== "undefined" && Main.init) Main.init();
+        if (typeof FormElements !== "undefined" && FormElements.init) FormElements.init();
+    });
+</script>
+
+<!-- Optional: UI Overlay -->
+<div class="sidebar-overlay" data-reff=""></div>
