@@ -1,6 +1,8 @@
 <?php
 session_start();
 include('./config.php');
+include('./checklogin.php');
+check_login();
 
 // Fetch current data
 $query = mysqli_query($con, "SELECT * FROM company_settings WHERE id=1");
@@ -39,7 +41,6 @@ if (isset($_POST['save'])) {
 
     if ($update) {
         $msg = "Settings updated successfully!";
-        // Refresh data after update
         $query = mysqli_query($con, "SELECT * FROM company_settings WHERE id=1");
         $data = mysqli_fetch_assoc($query);
     } else {
@@ -47,6 +48,15 @@ if (isset($_POST['save'])) {
     }
 }
 ?>
+
+<?php include('./header.php'); ?>
+<div class="header">
+    <div class="header-left">
+        <a href="#" class="logo">
+            <img src="../assets/images/logo.png" width="35" height="35" alt="care">
+        </a>
+    </div>
+</div>
 <div class="page-wrapper">
     <div class="content container-fluid">
         <div class="row">
@@ -61,21 +71,22 @@ if (isset($_POST['save'])) {
                             <div class="form-group">
                                 <label>Company Name <span class="text-danger">*</span></label>
                                 <input name="company_name" class="form-control" type="text"
-                                    value="<?php echo $data['company_name']; ?>" required>
+                                    value="<?php echo htmlspecialchars($data['company_name']); ?>" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Contact Person</label>
                                 <input name="contact_person" class="form-control" type="text"
-                                    value="<?php echo $data['contact_person']; ?>">
+                                    value="<?php echo htmlspecialchars($data['contact_person']); ?>">
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label>Address</label>
-                        <input name="address" class="form-control" type="text" value="<?php echo $data['address']; ?>">
+                        <input name="address" class="form-control" type="text"
+                            value="<?php echo htmlspecialchars($data['address']); ?>">
                     </div>
 
                     <div class="row">
@@ -83,28 +94,28 @@ if (isset($_POST['save'])) {
                             <div class="form-group">
                                 <label>Country</label>
                                 <input name="country" class="form-control" type="text"
-                                    value="<?php echo $data['country']; ?>">
+                                    value="<?php echo htmlspecialchars($data['country']); ?>">
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label>City</label>
                                 <input name="city" class="form-control" type="text"
-                                    value="<?php echo $data['city']; ?>">
+                                    value="<?php echo htmlspecialchars($data['city']); ?>">
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label>State</label>
                                 <input name="state" class="form-control" type="text"
-                                    value="<?php echo $data['state']; ?>">
+                                    value="<?php echo htmlspecialchars($data['state']); ?>">
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label>Postal Code</label>
                                 <input name="postal_code" class="form-control" type="text"
-                                    value="<?php echo $data['postal_code']; ?>">
+                                    value="<?php echo htmlspecialchars($data['postal_code']); ?>">
                             </div>
                         </div>
                     </div>
@@ -114,14 +125,14 @@ if (isset($_POST['save'])) {
                             <div class="form-group">
                                 <label>Email</label>
                                 <input name="email" class="form-control" type="email"
-                                    value="<?php echo $data['email']; ?>">
+                                    value="<?php echo htmlspecialchars($data['email']); ?>">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Phone</label>
                                 <input name="phone" class="form-control" type="text"
-                                    value="<?php echo $data['phone']; ?>">
+                                    value="<?php echo htmlspecialchars($data['phone']); ?>">
                             </div>
                         </div>
                     </div>
@@ -131,24 +142,29 @@ if (isset($_POST['save'])) {
                             <div class="form-group">
                                 <label>Mobile</label>
                                 <input name="mobile" class="form-control" type="text"
-                                    value="<?php echo $data['mobile']; ?>">
+                                    value="<?php echo htmlspecialchars($data['mobile']); ?>">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Fax</label>
-                                <input name="fax" class="form-control" type="text" value="<?php echo $data['fax']; ?>">
+                                <input name="fax" class="form-control" type="text"
+                                    value="<?php echo htmlspecialchars($data['fax']); ?>">
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label>Website</label>
-                        <input name="website" class="form-control" type="text" value="<?php echo $data['website']; ?>">
+                        <input name="website" class="form-control" type="text"
+                            value="<?php echo htmlspecialchars($data['website']); ?>">
                     </div>
 
                     <div class="text-center">
                         <button type="submit" name="save" class="btn btn-primary submit-btn">Save Settings</button>
+                    </div>
+                    <div class="text-center my-2 register-link">
+                        <a href="../dashboard.php">Back to Dashboard</a>
                     </div>
                 </form>
             </div>

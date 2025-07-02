@@ -145,7 +145,7 @@ if (isset($_POST['submit'])) {
                             <img class="img-thumbnail" src="./assests/images/admin.jpg" alt="">
                             <div class="blog-single-det">
                                 <h6>Admin Login</h6>
-                                <a href="hms/admin" target="_blank">
+                                <a href="admin/index.php" target="_blank">
                                     <button class="btn btn-primary btn-sm">Click Here</button>
                                 </a>
                             </div>
