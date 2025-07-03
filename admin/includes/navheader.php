@@ -1,4 +1,6 @@
-<?php error_reporting(0); ?>
+<?php 
+error_reporting(0);
+?>
    <div class="header">
             <div class="header-left">
                 <a href="#" class="logo">

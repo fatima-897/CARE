@@ -2,7 +2,6 @@
 session_start();
 include('../includes/config.php');
 
-
 // Redirect if not logged in
 if (strlen($_SESSION['id']) == 0) {
     header('location:../auth/logout.php');
@@ -92,7 +91,7 @@ if (isset($_GET['del'])) {
         <a href="./dashboard.php" class="text-white text-decoration-none">
             <img src="../assets/images/logo.png" width="30" height="30" alt="CARE">
         </a>
-        <a href="../dashboard.php" class="text-white">Back to Dashboard</a>
+        <a href="../dashboard.php" class="text-white text-decoration-none">Back to Dashboard</a>
     </div>
 
     <!-- Main Content -->

@@ -1,8 +1,6 @@
 <?php
 session_start();
 include('./config.php');
-include('./checklogin.php');
-check_login();
 
 // Fetch current data
 $query = mysqli_query($con, "SELECT * FROM company_settings WHERE id=1");

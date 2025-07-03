@@ -2,7 +2,6 @@
 session_start();
 error_reporting(0);
 include("includes/config.php");
-include("includes/checklogin.php");
 if (isset($_POST['submit'])) {
     $uname = $_POST['username'];
     $upassword = $_POST['password'];
