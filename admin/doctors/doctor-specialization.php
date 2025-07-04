@@ -28,7 +28,7 @@ if (isset($_GET['del'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>Manage Doctor Specialization | Admin - CARE</title>
+    <title>Admin |  Manage Doctor Specialization</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
