@@ -13,7 +13,7 @@ if (strlen($_SESSION['id'] == 0)) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../assets/images/favicon.ico">
-        <title>Appointment History | Admin</title>
+        <title>Between Dates Details Reports | Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
         <link rel="stylesheet" href="../assets/css/style.css">
@@ -29,6 +29,11 @@ if (strlen($_SESSION['id'] == 0)) {
                 .table td {
                     display: block;
                     width: 100%;
+                }
+
+                .table thead {
+                    background-color: #0d6efd;
+                    color: white;
                 }
 
                 .table tr {
@@ -54,6 +59,20 @@ if (strlen($_SESSION['id'] == 0)) {
                     font-weight: bold;
                 }
             }
+
+            .card {
+                border: none;
+                border-radius: 0.5rem;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+                margin-bottom: 2rem;
+            }
+
+            .card-header {
+                background-color: #0d6efd;
+                color: white;
+                padding: 1rem 1.5rem;
+                border-bottom: 1px solid rgba(0, 0, 0, .125);
+            }
         </style>
     </head>
 
@@ -66,60 +85,51 @@ if (strlen($_SESSION['id'] == 0)) {
             <a href="../dashboard.php" class="text-white text-decoration-none">Back to Dashboard</a>
         </div>
         <!-- Main Content -->
+
         <div class="container mt-5 py-5">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="mb-0">Appointment History</h4>
+                <div class="card-header bg-primary text-white">
+                    <h5 class="p-2 mb-0">Patient Report - Between Dates</h5>
                 </div>
                 <div class="card-body">
-                    <?php echo htmlentities($_SESSION['msg']); ?>
-                    <?php echo htmlentities($_SESSION['msg'] = ""); ?>
+                    <?php
+                    $fdate = $_POST['fromdate'];
+                    $tdate = $_POST['todate'];
+                    ?>
+                    <h6 class="mb-4 text-center text-secondary">Report from <strong><?php echo $fdate ?></strong> to <strong><?php echo $tdate ?></strong></h6>
+
                     <div class="table-responsive">
-                        <table class="table table-bordered table-striped table-hover">
-                            <thead class="table-light">
+                        <table class="table table-striped table-bordered">
+                            <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Doctor Name</th>
                                     <th>Patient Name</th>
-                                    <th>Specialization</th>
-                                    <th>Fee</th>
-                                    <th>Date / Time</th>
-                                    <th>Created On</th>
-                                    <th>Status</th>
+                                    <th>Contact Number</th>
+                                    <th>Gender</th>
+                                    <th>Created At</th>
+                                    <th>Updated At</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                $sql = mysqli_query($con, "SELECT doctors.doctorName AS docname, users.fullName AS pname, appointment.* FROM appointment JOIN doctors ON doctors.id = appointment.doctorId JOIN users ON users.id = appointment.userId");
+                                $sql = mysqli_query($con, "SELECT * FROM tblpatient WHERE date(CreationDate) BETWEEN '$fdate' AND '$tdate'");
                                 $cnt = 1;
                                 while ($row = mysqli_fetch_array($sql)) {
                                 ?>
                                     <tr>
                                         <td><?php echo $cnt; ?>.</td>
-                                        <td><?php echo htmlentities($row['docname']); ?></td>
-                                        <td><?php echo htmlentities($row['pname']); ?></td>
-                                        <td><?php echo htmlentities($row['doctorSpecialization']); ?></td>
-                                        <td><?php echo htmlentities($row['consultancyFees']); ?></td>
-                                        <td><?php echo htmlentities($row['appointmentDate']); ?> / <?php echo htmlentities($row['appointmentTime']); ?></td>
-                                        <td><?php echo htmlentities($row['postingDate']); ?></td>
+                                        <td><?php echo $row['PatientName']; ?></td>
+                                        <td><?php echo $row['PatientContno']; ?></td>
+                                        <td><?php echo $row['PatientGender']; ?></td>
+                                        <td><?php echo $row['CreationDate']; ?></td>
+                                        <td><?php echo $row['UpdationDate']; ?></td>
                                         <td>
-                                            <?php
-                                            if ($row['userStatus'] == 1 && $row['doctorStatus'] == 1) echo "Active";
-                                            elseif ($row['userStatus'] == 0 && $row['doctorStatus'] == 1) echo "Cancelled by Patient";
-                                            elseif ($row['userStatus'] == 1 && $row['doctorStatus'] == 0) echo "Cancelled by Doctor";
-                                            ?>
-                                        </td>
-                                        <td>
-                                            <?php
-                                            if ($row['userStatus'] == 1 && $row['doctorStatus'] == 1)
-                                                echo "No Action Yet";
-                                            else
-                                                echo "Canceled";
-                                            ?>
+                                            <a href="../patients/view-patient.php?viewid=<?php echo $row['ID']; ?>" class="btn btn-sm btn-outline-primary" target="_blank">View</a>
                                         </td>
                                     </tr>
-                                <?php $cnt++;
+                                <?php
+                                    $cnt++;
                                 } ?>
                             </tbody>
                         </table>
@@ -127,7 +137,6 @@ if (strlen($_SESSION['id'] == 0)) {
                 </div>
             </div>
         </div>
-
         <?php include('../includes/footer.php'); ?>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

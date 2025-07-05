@@ -15,7 +15,7 @@ if (strlen($_SESSION['id'] == 0)) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
-        <title>View Patient| Admin</title>
+        <title>Patient Search| Admin</title>
 
         <!-- Bootstrap 5 & FontAwesome -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
