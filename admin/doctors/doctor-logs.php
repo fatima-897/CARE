@@ -19,20 +19,60 @@ if (strlen($_SESSION['id'] == 0)) {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
         <link rel="stylesheet" href="../assets/css/style.css">
+        <style>
+        @media(max-width: 768px) {
+            .table thead {
+                display: none;
+            }
+
+            .table,
+            .table tbody,
+            .table tr,
+            .table td {
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;                
+                text-align: left;
+            }
+
+            .table tr {
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .table td {
+                position: relative;
+                text-align: left;
+            }
+
+            .table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: bold;
+            }
+        }
+    </style>
     </head>
 
     <body>
-        <div class="page-wrapper">
-            <!-- Header -->
+        <!-- Header -->
             <div class="header bg-primary mb-4 p-3 d-flex justify-content-between">
                 <a href="./dashboard.php" class="text-white text-decoration-none">
                     <img src="../assets/images/logo.png" width="30" height="30" alt="CARE">
                 </a>
                 <a href="../dashboard.php" class="text-white text-decoration-none">Back to Dashboard</a>
             </div>
+        <div class="container mt-5 pt-5 ">   
             <div class="content">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 pt-4">
                         <h4 class="page-title">Doctor Session Logs</h4>
                     </div>
                 </div>

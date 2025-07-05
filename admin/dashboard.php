@@ -84,12 +84,12 @@ $attended = mysqli_fetch_array(mysqli_query($con, "SELECT COUNT(*) AS attended F
                             <ul style="display: none;">
                                 <li><a href="doctors/doctor-specialization.php">Doctor Specialization</a></li>
                                 <li><a href="doctors/add-doctor.php">Add Doctor</a></li>
-                                <li><a href="doctors/edit-doctor.php">Edit Doctors</a></li>
+                                <li><a href="doctors/edit-doctor-specialization.php">Edit Doctors Specialization</a></li>
                                 <li><a href="doctors/doctor-logs.php">Doctor logs</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="patients/view-patient.php"><i class="fa fa-wheelchair"></i>
+                            <a href="patients/manage-patient.php"><i class="fa fa-wheelchair"></i>
                                 <span>Patients</span></a>
                         </li>
                         <li>

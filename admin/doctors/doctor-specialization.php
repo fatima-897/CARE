@@ -153,7 +153,7 @@ if (isset($_GET['del'])) {
                                     <td><?php echo htmlentities($row['creationDate']); ?></td>
                                     <td><?php echo htmlentities($row['updationDate'] ?? ''); ?></td>
                                     <td>
-                                        <a href="edit-doctor.php?id=<?php echo $row['id']; ?>"
+                                        <a href="edit-doctor-specialization.php?id=<?php echo $row['id']; ?>"
                                             class="btn btn-primary">Edit</a>
                                         <a href="doctor-specialization.php?id=<?php echo $row['id']; ?>&del=delete"
                                             onclick="return confirm('Are you sure?')" class="btn btn-danger">Delete</a>
