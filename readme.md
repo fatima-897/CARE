@@ -26,7 +26,6 @@
 - [Screenshots](#-screenshots)
 - [Troubleshooting](#-troubleshooting)
 - [Contributing](#-contributing)
-- [Contributors](#-contributors)
 - [License](#-license)
 
 ---
@@ -211,19 +210,9 @@ For major changes, please open an issue first to discuss what you would like to 
 
 ---
 
-## 👥 Contributors
-
-- **Fatima Nahid** — Team Lead  
-- Javeria  
-- Abdul Ghani  
-- Huzaifa  
-- Ashar  
-
----
-
 ## 📄 License
 
-This project is developed for **educational purposes at Aptech Pakistan**. Redistribution, modification, or commercial use is **not permitted** without explicit authorization.
+This project is developed for **educational purposes**. Redistribution, modification, or commercial use is **not permitted** without explicit authorization.
 
 ---
 
