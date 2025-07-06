@@ -5,11 +5,11 @@ if (isset($_POST['submit'])) {
     $email = $_POST['emailid'];
     $mobileno = $_POST['mobileno'];
     $dscrption = $_POST['description'];
-    $query = mysqli_query($con, "INSERT INTO tblcontactus(fullname,email,contactno,message) VALUES ('$name','$email','$mobileno','$dscrption')");
-    echo "<script>alert('Your information successfully submitted');</script>";
-    echo "<script>window.location.href='index.php'</script>";
-}
-?>
+    $query = mysqli_query($con, "insert into tblcontactus(fullname,email,contactno,message) value('$name','$email','$mobileno','$dscrption')");
+    echo "<script>alert('Your information succesfully submitted');</script>";
+    echo "<script>window.location.href ='index.php'</script>";
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -516,7 +516,7 @@ if (isset($_POST['submit'])) {
                 <!-- Form Section -->
                 <div class="col-md-6">
                     <div class="p-4 bg-white shadow-sm rounded">
-                        <!-- PHP Message -->
+                        <!-- PHP Message (Session Based) -->
                         <?php
                         if (isset($message)) {
                             foreach ($message as $msg) {
@@ -525,7 +525,7 @@ if (isset($_POST['submit'])) {
                         }
                         ?>
 
-                        <!-- Form -->
+                        <!--Appointment Form -->
                         <h3 class="fw-bold mb-3">Make an Appointment</h3>
                         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                             <div class="mb-3">
@@ -560,27 +560,30 @@ if (isset($_POST['submit'])) {
                 <p class="text-muted">We'd love to hear from you! Fill out the form below or find us at our location.
                 </p>
             </div>
-
             <!-- Form and Map Row -->
             <div class="row g-4">
                 <!-- Contact Form -->
                 <div class="col-md-6">
                     <div class="p-4 bg-white shadow-sm rounded">
-                        <form>
+                        <form method="post">
                             <div class="mb-3">
-                                <label for="name" class="form-label">Your Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                <div class="col-sm-3"><label>Your Name :</label></div>
+                                <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="fullname" class="form-control input-sm" required></div>
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                                <div class="col-sm-3"><label>Email Address :</label></div>
+                                <div class="col-sm-8"><input type="text" name="emailid" placeholder="Enter Email Address" class="form-control input-sm" required></div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="col-sm-3"><label>Mobile Number:</label></div>
+                                <div class="col-sm-8"><input type="text" name="mobileno" placeholder="Enter Mobile Number" class="form-control input-sm" required></div>
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message</label>
                                 <textarea class="form-control" id="message" rows="5"
-                                    placeholder="Your message..."></textarea>
+                                    placeholder="Enter your message..." class="form-control input-sm" name="description" required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary px-4">Send Message</button>
+                            <button type="submit" name="submit" class="btn btn-primary px-4">Send Message</button>
                         </form>
                     </div>
                 </div>

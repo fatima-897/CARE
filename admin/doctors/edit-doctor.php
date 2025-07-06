@@ -41,7 +41,7 @@ if (strlen($_SESSION['id'] == 0)) {
 
         <!-- Header -->
         <div class="header bg-primary mb-4 p-3 d-flex justify-content-between">
-            <a href="./dashboard.php" class="text-white text-decoration-none">
+            <a href="../dashboard.php" class="text-white text-decoration-none">
                 <img src="../assets/images/logo.png" width="30" height="30" alt="CARE">
             </a>
             <a href="../dashboard.php" class="text-white text-decoration-none">Back to Dashboard</a>

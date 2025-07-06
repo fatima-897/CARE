@@ -52,8 +52,6 @@ $attended = mysqli_fetch_array(mysqli_query($con, "SELECT COUNT(*) AS attended F
                         <span>Admin</span>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="profile.php">My Profile</a>
-                        <a class="dropdown-item" href="edit-profile.php">Edit Profile</a>
                         <a class="dropdown-item" href="includes/setting.php">Settings</a>
                         <a class="dropdown-item" href="auth/logout.php">Logout</a>
                     </div>
@@ -63,8 +61,6 @@ $attended = mysqli_fetch_array(mysqli_query($con, "SELECT COUNT(*) AS attended F
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
                         class="fa fa-ellipsis-v"></i></a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="profile.php">My Profile</a>
-                    <a class="dropdown-item" href="edit-profile.php">Edit Profile</a>
                     <a class="dropdown-item" href="includes/setting.php">Settings</a>
                     <a class="dropdown-item" href="auth/logout.php">Logout</a>
                 </div>
@@ -95,6 +91,9 @@ $attended = mysqli_fetch_array(mysqli_query($con, "SELECT COUNT(*) AS attended F
                         <li>
                             <a href="manage-users.php"><i class="fa fa-users"></i> <span> Users</span></a>
                         </li>
+                         <li>
+                            <a href="auth/user-logs.php"><i class="fa fa-users"></i> <span>User Session</span></a>
+                        </li>
                         <li>
                             <a href="appointments/appointment-history.php"><i class="fa fa-calendar"></i>
                                 <span>Appointments</span></a>
@@ -103,8 +102,7 @@ $attended = mysqli_fetch_array(mysqli_query($con, "SELECT COUNT(*) AS attended F
                             <a href="#"><i class="fa fa-envelope"></i> <span>Contact Queries</span> <span
                                     class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="queries/query-details.php">Query Details</a></li>
-                                <li><a href="queries/unreadqueries.php">Unread Queries</a></li>
+                                <li><a href="queries/unread-queries.php">Unread Queries</a></li>
                                 <li><a href="queries/read-queries.php">Read Queries</a></li>
                             </ul>
                         </li>
@@ -118,8 +116,6 @@ $attended = mysqli_fetch_array(mysqli_query($con, "SELECT COUNT(*) AS attended F
                             <ul style="display: none;">
                                 <li><a href="cities/manage-cities.php">Manage cities</a></li>
                                 <li><a href="cities/add-cities.php">Add City</a></li>
-                                <li><a href="cities/edit-cities">Edit City</a></li>
-                                <li><a href="cities/delete-cities.php">Delete city</a></li>
                             </ul>
                         </li>
                         <li>

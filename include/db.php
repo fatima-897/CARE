@@ -1,14 +1,14 @@
 <?php
-$host = "localhost";
-$dbname = "hms";
-$username = "root"; // default for XAMPP
-$password = "";     // default for XAMPP
+define('DB_SERVER','localhost');
+define('DB_USER','root');
+define('DB_PASS' ,'');
+define('DB_NAME', 'hms');
 
-// Create connection
-$conn = new mysqli($host, $username, $password, $dbname);
+$con = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    exit();
 }
 ?>

@@ -21,7 +21,10 @@
                                 <span>Patients</span></a>
                         </li>
                         <li>
-                            <a href="manage-users.php"><i class="fa fa-users"></i> <span> Users</span></a>
+                            <a href="manage-users.php"><i class="fa fa-users"></i> <span>Users</span></a>
+                        </li>
+                         <li>
+                            <a href="auth/user-logs.php"><i class="fa fa-users"></i> <span>User Session</span></a>
                         </li>
                         <li>
                             <a href="appointments/appointment-history.php"><i class="fa fa-calendar"></i>
@@ -31,9 +34,8 @@
                             <a href="#"><i class="fa fa-envelope"></i> <span>Contact Queries</span> <span
                                     class="menu-arrow"></span></a>
                             <ul>
-                                <li><a href="queries/query.php">View Query</a></li>
-                                <li><a href="queries/add-queries.php">Add Queries</a></li>
-                                <li><a href="queries/edit-queries.php">Edit Queries</a></li>
+                                <li><a href="queries/unread-queries.php">Unread Queries</a></li>
+                                <li><a href="queries/read-queries.php">Read Queries</a></li>
                             </ul>
                         </li>
                         <li>
@@ -45,8 +47,6 @@
                             <ul style="display: none;">
                                 <li><a href="cities/manage-cities.php">Manage cities</a></li>
                                 <li><a href="cities/add-cities.php">Add City</a></li>
-                                <li><a href="cities/edit-cities">Edit City</a></li>
-                                <li><a href="cities/delete-cities.php">Delete city</a></li>
                             </ul>
                         </li>
                         <li>
