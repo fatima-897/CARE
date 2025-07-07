@@ -119,7 +119,7 @@ $attended = mysqli_fetch_array(mysqli_query($con, "SELECT COUNT(*) AS attended F
                             </ul>
                         </li>
                         <li>
-                            <a href="news/content_news.php"><i class="fa fa-commenting-o"></i> <span> Blog
+                            <a href="news/add-post.php"><i class="fa fa-commenting-o"></i> <span> Blog
                                     News</span></a>
                         </li>
                         <li>

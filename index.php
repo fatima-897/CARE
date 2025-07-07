@@ -1,14 +1,6 @@
 <?php
 include_once('./include/db.php');
-if (isset($_POST['submit'])) {
-    $name = $_POST['fullname'];
-    $email = $_POST['emailid'];
-    $mobileno = $_POST['mobileno'];
-    $dscrption = $_POST['description'];
-    $query = mysqli_query($con, "insert into tblcontactus(fullname,email,contactno,message) value('$name','$email','$mobileno','$dscrption')");
-    echo "<script>alert('Your information succesfully submitted');</script>";
-    echo "<script>window.location.href ='index.php'</script>";
-} ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +39,7 @@ if (isset($_POST['submit'])) {
                         <li class="nav-item"><a class="nav-link" href="#contact_us">Contact Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
                         <li class="nav-item"><a class="nav-link" href="#cities">Cities</a></li>
-                        <li class="nav-item"><a class="nav-link" href="patient/book_appointment.php">Book
+                        <li class="nav-item"><a class="nav-link" href="#appointment">Book
                                 Appointment</a></li>
                     </ul>
                     <div class="d-lg-block">
@@ -267,10 +259,10 @@ if (isset($_POST['submit'])) {
     </section>
 
     <!-- News Section -->
-    <section id="news" class="py-5 bg-white">
-        <div class="row">
+    <!-- <section id="news" class="py-5 bg-light">
+        <div class="row"> -->
             <!-- Section Heading -->
-            <div class="text-center mb-5">
+            <!-- <div class="text-center mb-5">
                 <h2 class="fw-bold">Latest News</h2>
                 <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, eligendi!
                 </p>
@@ -357,11 +349,57 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <section id="news" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Latest News</h2>
+            <p class="text-muted">Stay updated with the latest health news.</p>
+        </div>
+
+        <div class="row">
+            <?php
+            $posts = mysqli_query($con, "SELECT * FROM posts WHERE status='active' ORDER BY created_at DESC LIMIT 3");
+
+            while ($post = mysqli_fetch_assoc($posts)) {
+                $post_id = $post['id'];
+                $title = $post['title'];
+                $description = substr(strip_tags($post['description']), 0, 100) . "...";
+                $created_at = date("F j, Y", strtotime($post['created_at']));
+
+                // Get first image
+                $img = mysqli_query($con, "SELECT image_name FROM post_images WHERE post_id=$post_id LIMIT 1");
+                $img_row = mysqli_fetch_assoc($img);
+                $image = $img_row ? $img_row['image_name'] : 'default.jpg';
+            ?>
+                <div class="col-lg-4">
+                    <div class="blog grid-blog">
+                        <div class="blog-image">
+                            <a href="admin/news/content_news.php?id=<?php echo $post_id; ?>">
+                                <img src="admin/uploads/<?php echo $image; ?>" class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-content">
+                            <h3 class="blog-title"><a href="admin/news/content_news.php?id=<?php echo $post_id; ?>"><?php echo $title; ?></a></h3>
+                            <p><?php echo $description; ?></p>
+                            <a href="admin/news/content_news.php?id=<?php echo $post_id; ?>" class="read-more">
+                                <i class="fa fa-long-arrow-right"></i> Read More
+                            </a>
+                            <div class="blog-info clearfix mt-2">
+                                <span><i class="fa fa-calendar"></i> <?php echo $created_at; ?></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</section>
 
 
     <!-- City Section-->
-    <section id="cities" class="py-5 bg-light">
+    <section id="cities" class="py-5 bg-white">
         <div class="container">
             <!-- Section Heading -->
             <div class="text-center mb-5">
@@ -499,11 +537,13 @@ if (isset($_POST['submit'])) {
 
 
     <!-- Appointment Section -->
-    <section id="appointment" class="py-5 bg-white">
+    <section id="appointment" class="py-5 bg-light">
         <div class="container">
             <!-- Heading -->
             <div class="text-center mb-5">
-                <h2 class="fw-bold"> <span class="text-primary">Make Appointment</span> Now</h2>
+                <h2 class="fw-bold"> <span class="text-primary">
+                        <img src="./assests/img/logo-dark.png" width="35" height="35" alt="HMS">
+                        <br>Make Appointment</span> Now</h2>
             </div>
 
             <div class="row align-items-center">
@@ -523,11 +563,31 @@ if (isset($_POST['submit'])) {
                                 echo '<div class="alert alert-info py-1 px-2 mb-3">' . $msg . '</div>';
                             }
                         }
+
+                        if (isset($_POST['submit'])) {
+                            $name = $_POST['name'];
+                            $number = $_POST['number'];
+                            $email = $_POST['email'];
+                            $date = $_POST['date'];
+
+                            // basic validation
+                            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                                $message[] = "Invalid email format.";
+                            } else {
+                                $query = mysqli_query($con, "INSERT INTO appointment_requests(name, number, email, appointment_date) VALUES('$name', '$number', '$email', '$date')");
+
+                                if ($query) {
+                                    $message[] = "Your appointment has been booked successfully.";
+                                } else {
+                                    $message[] = "Something went wrong. Please try again.";
+                                }
+                            }
+                        }
                         ?>
 
                         <!--Appointment Form -->
                         <h3 class="fw-bold mb-3">Make an Appointment</h3>
-                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                             <div class="mb-3">
                                 <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                             </div>
@@ -538,7 +598,7 @@ if (isset($_POST['submit'])) {
                                 <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                             </div>
                             <div class="mb-3">
-                                <input type="date" name="date" class="form-control" required>
+                                <input type="date" name="date" min="<?php echo date('Y-m-d'); ?>" class="form-control" required>
                             </div>
                             <div class="d-grid">
                                 <input type="submit" name="submit" value="Book Appointment" class="btn btn-primary">
@@ -565,6 +625,17 @@ if (isset($_POST['submit'])) {
                 <!-- Contact Form -->
                 <div class="col-md-6">
                     <div class="p-4 bg-white shadow-sm rounded">
+                        <?php
+                        if (isset($_POST['submit'])) {
+                            $name = $_POST['fullname'];
+                            $email = $_POST['emailid'];
+                            $mobileno = $_POST['mobileno'];
+                            $dscrption = $_POST['description'];
+                            $query = mysqli_query($con, "insert into tblcontactus(fullname,email,contactno,message) value('$name','$email','$mobileno','$dscrption')");
+                            echo "<script>alert('Your information succesfully submitted');</script>";
+                            echo "<script>window.location.href ='index.php'</script>";
+                        }
+                        ?>
                         <form method="post">
                             <div class="mb-3">
                                 <div class="col-sm-3"><label>Your Name :</label></div>

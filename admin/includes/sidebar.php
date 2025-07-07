@@ -50,7 +50,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="news/content_news.php"><i class="fa fa-commenting-o"></i> <span> Blog News</span></a>
+                            <a href="news/add-post.php"><i class="fa fa-commenting-o"></i> <span> Blog News</span></a>
                         </li>
                         <li>
                             <a href="patients/patient-search.php"><i class="fa fa-search"></i> <span>Patient
