@@ -199,3 +199,4 @@ $attended = mysqli_fetch_array(mysqli_query($con, "SELECT COUNT(*) AS attended F
 
 </body>
 </html>
+
