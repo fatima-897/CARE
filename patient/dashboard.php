@@ -1,7 +1,14 @@
    <?php
     session_start();
     error_reporting(0);
-    include('../includes/config.php');
+    include('includes/config.php');
+
+    $userId = $_SESSION['id'];
+    $query = mysqli_query($con, "SELECT fullName FROM users WHERE id='$userId'");
+    $row = mysqli_fetch_array($query);
+    $userName = htmlentities($row['fullName']);
+
+
     if (strlen($_SESSION['id'] == 0)) {
         header('location: auth/logout.php');
     } else {
@@ -59,7 +66,6 @@
                    </div>
                </div>
 
-
                <div class="sidebar" id="sidebar">
                    <div class="sidebar-inner slimscroll">
                        <div id="sidebar-menu" class="sidebar-menu">
@@ -95,35 +101,56 @@
 
                <div class="page-wrapper">
                    <div class="content">
+
+                       <!-- Breadcrumb with User Name -->
+                       <div class="row mb-4">
+                           <div class="col-12 d-flex justify-content-between align-items-center">
+                               <h4 class="page-title">Dashboard</h4>
+                               <nav aria-label="breadcrumb">
+                                   <ol class="breadcrumb">
+                                       <li class="breadcrumb-item">Welcome, <strong><?php echo $userName; ?></strong></li>
+                                       <li class="breadcrumb-item active" aria-current="page">Home</li>
+                                   </ol>
+                               </nav>
+                           </div>
+                       </div>
+
+                       <!-- Dashboard Cards Styled -->
                        <div class="row">
+
+                           <!-- My Profile -->
                            <div class="col-sm-4 col-lg-6 col-xl-3">
                                <div class="dash-widget panel panel-white text-center">
                                    <div class="panel-body">
-                                       <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
-                                       <h3 class="StepTitle">My Profile</h3>
-
+                                       <span class="fa-stack fa-2x">
+                                           <i class="fa fa-square fa-stack-2x text-primary"></i>
+                                           <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i>
+                                       </span>
+                                       <h4 class="StepTitle">My Profile</h4>
                                        <p class="links cl-effect-1">
-                                           <a href="edit-profile.php">
-                                               Update Profile
-                                           </a>
+                                           <a href="edit-profile.php">Update Profile</a>
                                        </p>
                                    </div>
                                </div>
                            </div>
-                           <div class=" col-sm-4 col-lg-6 col-xl-3">
+
+                           <!-- My Appointments -->
+                           <div class="col-sm-4 col-lg-6 col-xl-3">
                                <div class="dash-widget panel panel-white text-center">
                                    <div class="panel-body">
-                                       <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i> </span>
-                                       <h3 class="StepTitle">My Appointments</h3>
-
+                                       <span class="fa-stack fa-2x">
+                                           <i class="fa fa-square fa-stack-2x text-primary"></i>
+                                           <i class="fa fa-paperclip fa-stack-1x fa-inverse"></i>
+                                       </span>
+                                       <h4 class="StepTitle">My Appointments</h4>
                                        <p class="cl-effect-1">
-                                           <a href="appointment-history.php">
-                                               View Appointment History
-                                           </a>
+                                           <a href="appointment-history.php">View Appointment History</a>
                                        </p>
                                    </div>
                                </div>
                            </div>
+
+                           <!-- Book Appointment -->
                            <div class="col-sm-4 col-lg-6 col-xl-3">
                                <div class="dash-widget panel panel-white text-center">
                                    <div class="panel-body">
@@ -131,20 +158,18 @@
                                            <i class="fa fa-square fa-stack-2x text-primary"></i>
                                            <i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
                                        </span>
-
-                                       <h3 class="StepTitle">Book my Appointments</h3>
-
+                                       <h4 class="StepTitle">Book My Appointments</h4>
                                        <p class="cl-effect-1">
-                                           <a href="book-appointment.php">
-                                               Book Appointment
-                                           </a>
+                                           <a href="book-appointment.php">Book Appointment</a>
                                        </p>
                                    </div>
                                </div>
                            </div>
+
                        </div>
                    </div>
                </div>
+
 
                <div class="sidebar-overlay" data-reff=""></div>
                <script src="assets/js/jquery-3.2.1.min.js"></script>
