@@ -114,7 +114,7 @@ include_once('./include/db.php');
                             <img class="img-thumbnail" src="./assests/images/patient.jpg" alt="">
                             <div class="blog-single-det">
                                 <h6>Patient Login</h6>
-                                <a href="hms/user-login.php" target="_blank">
+                                <a href="patient/index.php" target="_blank">
                                     <button class="btn btn-primary btn-sm">Click Here</button>
                                 </a>
                             </div>
@@ -125,7 +125,7 @@ include_once('./include/db.php');
                             <img class="img-thumbnail" src="./assests/images/doctor.jpg" alt="">
                             <div class="blog-single-det">
                                 <h6>Doctors login</h6>
-                                <a href="hms/doctor" target="_blank">
+                                <a href="doctor/index.php" target="_blank">
                                     <button class="btn btn-primary btn-sm">Click Here</button>
                                 </a>
                             </div>
@@ -259,143 +259,51 @@ include_once('./include/db.php');
     </section>
 
     <!-- News Section -->
-    <!-- <section id="news" class="py-5 bg-light">
-        <div class="row"> -->
-            <!-- Section Heading -->
-            <!-- <div class="text-center mb-5">
-                <h2 class="fw-bold">Latest News</h2>
-                <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, eligendi!
-                </p>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-4">
-                <div class="blog grid-blog">
-                    <div class="blog-image">
-                        <a href="blog-details.html"><img class="img-fluid" src="./assests/img/blog/blog-01.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title"><a href="blog-details.html">Do You Know the ABCs of Health Care?</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore etmis dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco sit laboris.</p>
-                        <a href="blog-details.html" class="read-more"><i class="fa fa-long-arrow-right"></i> Read
-                            More</a>
-                        <div class="blog-info clearfix">
-                            <div class="post-left">
-                                <ul>
-                                    <li><a href="#."><i class="fa fa-calendar"></i> <span>December 6, 2017</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="post-right"><a href="#."><i class="fa fa-heart-o"></i>21</a> <a href="#."><i
-                                        class="fa fa-eye"></i>8</a> <a href="#."><i class="fa fa-comment-o"></i>17</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-4">
-                <div class="blog grid-blog">
-                    <div class="blog-image">
-                        <a href="blog-details.html"><img class="img-fluid" src="./assests/img/blog/blog-02.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title"><a href="blog-details.html">Do You Know the ABCs of Health Care?</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore etmis dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco sit laboris.</p>
-                        <a href="blog-details.html" class="read-more"><i class="fa fa-long-arrow-right"></i> Read
-                            More</a>
-                        <div class="blog-info clearfix">
-                            <div class="post-left">
-                                <ul>
-                                    <li><a href="#."><i class="fa fa-calendar"></i> <span>December 6, 2017</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="post-right"><a href="#."><i class="fa fa-heart-o"></i>21</a> <a href="#."><i
-                                        class="fa fa-eye"></i>8</a> <a href="#."><i class="fa fa-comment-o"></i>17</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-4">
-                <div class="blog grid-blog">
-                    <div class="blog-image">
-                        <a href="blog-details.html"><img class="img-fluid" src="./assests/img/blog/blog-03.jpg"
-                                alt=""></a>
-                    </div>
-                    <div class="blog-content">
-                        <h3 class="blog-title"><a href="blog-details.html">Do You Know the ABCs of Health Care?</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore etmis dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco sit laboris.</p>
-                        <a href="blog-details.html" class="read-more"><i class="fa fa-long-arrow-right"></i> Read
-                            More</a>
-                        <div class="blog-info clearfix">
-                            <div class="post-left">
-                                <ul>
-                                    <li><a href="#."><i class="fa fa-calendar"></i> <span>December 6, 2017</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="post-right"><a href="#."><i class="fa fa-heart-o"></i>21</a> <a href="#."><i
-                                        class="fa fa-eye"></i>8</a> <a href="#."><i class="fa fa-comment-o"></i>17</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <section id="news" class="py-5 bg-light">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Latest News</h2>
-            <p class="text-muted">Stay updated with the latest health news.</p>
-        </div>
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Latest News</h2>
+                <p class="text-muted">Stay updated with the latest health news.</p>
+            </div>
 
-        <div class="row">
-            <?php
-            $posts = mysqli_query($con, "SELECT * FROM posts WHERE status='active' ORDER BY created_at DESC LIMIT 3");
+            <div class="row">
+                <?php
+                $posts = mysqli_query($con, "SELECT * FROM posts WHERE status='active' ORDER BY created_at DESC LIMIT 3");
 
-            while ($post = mysqli_fetch_assoc($posts)) {
-                $post_id = $post['id'];
-                $title = $post['title'];
-                $description = substr(strip_tags($post['description']), 0, 100) . "...";
-                $created_at = date("F j, Y", strtotime($post['created_at']));
+                while ($post = mysqli_fetch_assoc($posts)) {
+                    $post_id = $post['id'];
+                    $title = $post['title'];
+                    $description = substr(strip_tags($post['description']), 0, 100) . "...";
+                    $created_at = date("F j, Y", strtotime($post['created_at']));
 
-                // Get first image
-                $img = mysqli_query($con, "SELECT image_name FROM post_images WHERE post_id=$post_id LIMIT 1");
-                $img_row = mysqli_fetch_assoc($img);
-                $image = $img_row ? $img_row['image_name'] : 'default.jpg';
-            ?>
-                <div class="col-lg-4">
-                    <div class="blog grid-blog">
-                        <div class="blog-image">
-                            <a href="admin/news/content_news.php?id=<?php echo $post_id; ?>">
-                                <img src="admin/uploads/<?php echo $image; ?>" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <h3 class="blog-title"><a href="admin/news/content_news.php?id=<?php echo $post_id; ?>"><?php echo $title; ?></a></h3>
-                            <p><?php echo $description; ?></p>
-                            <a href="admin/news/content_news.php?id=<?php echo $post_id; ?>" class="read-more">
-                                <i class="fa fa-long-arrow-right"></i> Read More
-                            </a>
-                            <div class="blog-info clearfix mt-2">
-                                <span><i class="fa fa-calendar"></i> <?php echo $created_at; ?></span>
+                    // Get first image
+                    $img = mysqli_query($con, "SELECT image_name FROM post_images WHERE post_id=$post_id LIMIT 1");
+                    $img_row = mysqli_fetch_assoc($img);
+                    $image = $img_row ? $img_row['image_name'] : 'default.jpg';
+                ?>
+                    <div class="col-lg-4">
+                        <div class="blog grid-blog">
+                            <div class="blog-image">
+                                <a href="admin/news/content_news.php?id=<?php echo $post_id; ?>">
+                                    <img src="admin/uploads/<?php echo $image; ?>" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <h3 class="blog-title"><a href="admin/news/content_news.php?id=<?php echo $post_id; ?>"><?php echo $title; ?></a></h3>
+                                <p><?php echo $description; ?></p>
+                                <a href="admin/news/content_news.php?id=<?php echo $post_id; ?>" class="read-more">
+                                    <i class="fa fa-long-arrow-right"></i> Read More
+                                </a>
+                                <div class="blog-info clearfix mt-2">
+                                    <span><i class="fa fa-calendar"></i> <?php echo $created_at; ?></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            <?php } ?>
+                <?php } ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
     <!-- City Section-->
