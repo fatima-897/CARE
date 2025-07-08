@@ -128,6 +128,7 @@ CARE/
 ├── admin/
 │   ├── appointments/
 |   ├── assets/
+|   ├── auth/
 |   ├── cities
 |   ├── doctors/
 │   ├── includes/
@@ -148,7 +149,16 @@ CARE/
 ├── doctor/
 ├── include/
 ├── master/
-├── patient
+├── patient/
+│   ├── assets/
+|   ├── auth/
+│   ├── includes/
+│   ├── vendor/
+│   ├── appointment-history.php
+│   ├── book-appointment.php
+│   ├── dashboard.php
+│   ├── index.php
+│   └── manage-history.php
 ├── vendor/
 ├── assets/
 └── index.php/
