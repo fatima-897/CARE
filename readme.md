@@ -1,225 +1,190 @@
+# CARE – Hospital Management System
 
-# CARE - Hospital Management System
+**Tagline**: *Streamlining Healthcare, One Click at a Time*
 
-![Repo Size](https://img.shields.io/github/repo-size/fatima-897/CARE?style=for-the-badge)  
-![Languages](https://img.shields.io/github/languages/count/fatima-897/CARE?style=for-the-badge)  
-![Top Language](https://img.shields.io/github/languages/top/fatima-897/CARE?style=for-the-badge)  
-![Last Commit](https://img.shields.io/github/last-commit/fatima-897/CARE?style=for-the-badge)  
-![Issues](https://img.shields.io/github/issues/fatima-897/CARE?style=for-the-badge)  
-![License](https://img.shields.io/badge/license-Educational-blue?style=for-the-badge)  
-![Status](https://img.shields.io/badge/status-Active-brightgreen?style=for-the-badge)  
+## 📌 Project Overview
 
-> 🚀 *A web-based Hospital Management System designed for efficient hospital operations with role-based dashboards for Admins, Doctors, and Patients.*
+CARE is a web-based Hospital Management System built to streamline patient management, appointment scheduling, doctor allocation, and administrative functions within a healthcare setup. The system supports three user roles: **Admin**, **Doctor**, and **Patient**, each with specific access controls and capabilities. It automates critical operations to improve efficiency, reduce manual errors, and enhance the user experience in hospitals and clinics.
 
 ---
 
-## 📜 Table of Contents
+## 👥 Team Members – Aptech Pakistan
 
-- [Project Overview](#-project-overview)
-- [Features](#-features)
-- [Technologies Used](#-technologies-used)
-- [Folder Structure](#-folder-structure)
-- [Installation Guide (Local)](#-installation-guide-local)
-- [Deployment on Cloud](#-deployment-on-cloud)
-- [Login Credentials](#-login-credentials-sample)
-- [Usage](#-usage)
-- [Screenshots](#-screenshots)
-- [Troubleshooting](#-troubleshooting)
-- [Contributing](#-contributing)
-- [License](#-license)
+* **Fatima Nahid** *(Team Lead)*
+* Javeria
+* Abdul Ghani
+* Huzaifa
+* Ashar
 
 ---
 
-## 🏥 Project Overview
+## 🧰 Tech Stack
 
-**CARE** is a web-based Hospital Management System designed to simplify and automate hospital operations. It offers role-based access for Admins, Doctors, and Patients to manage appointments, users, and announcements efficiently.
-
----
-
-## 🚀 Features
-
-- 🔐 Role-based login (Admin, Doctor, Patient)
-- 📝 Patient self-registration
-- 📅 Appointment booking and management
-- 🩺 Doctor availability management
-- 🗂️ Admin control for doctors, patients, and hospital news
-- 🔔 News and announcements module
-- 💻 Responsive and secure user interface
+* **Backend**: PHP (Core PHP)
+* **Frontend**: HTML5, CSS3, JavaScript, Bootstrap 5
+* **Database**: MySQL (phpMyAdmin)
+* **Other Tools**: XAMPP, Visual Studio Code
 
 ---
 
-## 🛠️ Technologies Used
+## 🧑‍💼 User Roles & Features
 
-- **Frontend:** HTML, CSS, Bootstrap, JavaScript
-- **Backend:** PHP
-- **Database:** MySQL
-- **Web Server:** Apache (via XAMPP/WAMP or cPanel)
+### 🛡️ Admin
+
+* Register and manage doctor profiles
+* View and manage patient records
+* Handle appointments and appointment requests
+* Post blogs/news via content management
+* View contact messages and give admin feedback
+* Manage cities, company settings, and web pages
+
+### 👨‍⚕️ Doctor
+
+* Log in and manage their profile
+* View and update assigned patient medical history
+* View appointment details
+* Add medical prescriptions and diagnosis
+
+### 👩‍⚕️ Patient
+
+* Self-register and log in
+* Book appointments with doctors
+* View their medical history and appointment status
+* Contact hospital via contact form
 
 ---
 
-## 📂 Folder Structure
+## 🗂️ Main Database Tables (MySQL)
 
-```plaintext
-/care
-|-- /admin            # Admin dashboard
-|-- /doctor           # Doctor dashboard
-|-- /patient          # Patient dashboard
-|-- /css              # Stylesheets
-|-- /js               # JavaScript files
-|-- /inc              # Reusable include files
-|-- db.php            # Database connection file
-|-- index.php         # Main login page
-|-- care.sql          # Database file
+| Table Name               | Purpose Description                               |
+| ------------------------ | ------------------------------------------------- |
+| `admin`                  | Stores admin login credentials                    |
+| `doctors`                | Contains doctor profiles and credentials          |
+| `users`                  | Stores patient registration details               |
+| `appointment`            | Appointment records linking doctor, patient, fees |
+| `appointment_requests`   | Stores public appointment queries                 |
+| `tblpatient`             | Individual patient records with assigned doctor   |
+| `tblmedicalhistory`      | Patient medical records and prescriptions         |
+| `doctorspecilization`    | Master list of medical specializations            |
+| `posts`                  | Blog/news posts data                              |
+| `post_images`            | Images linked to posts                            |
+| `tblcontactus`           | Contact form submissions                          |
+| `userlog` / `doctorslog` | Login sessions of users and doctors               |
+| `company_settings`       | Static site configuration (name, contact)         |
+| `cities`                 | Available cities for address selections           |
+| `tblpage`                | Dynamic content like "About Us", "Contact Us"     |
+
+---
+
+## 🔗 System Workflow (Basic)
+
+```mermaid
+graph TD
+A[Patient Registers/Login] --> B[Book Appointment]
+B --> C[Appointment Stored]
+A --> D[Contact via Form]
+Admin -->|Assign Doctor| C
+Doctor -->|Update Medical History| E[Patient Record]
+Admin -->|Respond to Contact| D
 ```
 
 ---
 
-## 🏗️ Installation Guide (Local)
+## 📊 Data Flow Diagram (DFD)
 
-### Requirements:
+A Level 1 DFD is included in the submission package (see: `A_Data_Flow_Diagram_(DFD)_for_a_Hospital_Management.png`), showing:
 
-- XAMPP, WAMP, MAMP, or similar local server
-- PHP >= 7.0
-- MySQL
+* Patient Registration Flow
+* Appointment Booking
+* Medical Record Handling
+* Admin & Doctor Interaction
 
-### Steps:
+---
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/fatima-897/CARE.git
-```
-
-2. Move the project folder `/care` to your web server directory (`htdocs` for XAMPP).
-
-3. Import the database:
-   - Open **phpMyAdmin**.
-   - Create a database named `care`.
-   - Import `care.sql` from the project root.
-
-4. Update `db.php` with your database credentials:
-
-```php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "care";
-```
-
-5. Start Apache and MySQL.
-
-6. Access via browser:
+## 🧪 Sample Login Credentials
 
 ```
-http://localhost/care
+Admin:
+  Username: admin
+  Password: allah786
+
+Doctor:
+  Email: anujk123@test.com
+  Password (MD5): f925916e2754e5e03f75dd58a5733251
+
+Patient:
+  Email: johndoe12@test.com
+  Password (MD5): f925916e2754e5e03f75dd58a5733251
+```
+
+> Note: Passwords are stored using MD5 (for demonstration only – not secure for production use).
+
+---
+
+## 📁 File Structure
+
+```
+CARE/
+├── admin/
+│   ├── appointments/
+|   ├── assets/
+|   ├── cities
+|   ├── doctors/
+│   ├── includes/
+│   ├── news/
+│   ├── patients/
+│   ├── queries/
+│   ├── reports/
+│   ├── uploads/
+│   ├── vendor/
+│   ├── dashboard.php
+│   ├── index.php
+│   └── manage-user.php
+├── assets/
+│   ├── css/
+│   ├── js/
+│   ├── images/
+├── database/ 
+├── doctor/
+├── include/
+├── master/
+├── patient
+├── vendor/
+├── assets/
+└── index.php/
 ```
 
 ---
 
-## ☁️ Deployment on Cloud
+## 📦 How to Run
 
-### ✅ Common for cPanel/Shared Hosting:
-
-1. **Compress** the `/care` folder into a `.zip` file.
-
-2. **Upload** it via **File Manager** in cPanel to the `/public_html` directory.
-
-3. **Extract** the zip file.
-
-4. **Database Setup:**
-   - Go to **MySQL Databases** in cPanel.
-   - Create a new database (e.g., `care_db`).
-   - Create a MySQL user and assign it to the database with **All Privileges**.
-   - Go to **phpMyAdmin**, select the database, and import `care.sql`.
-
-5. **Update `db.php`:**
-
-```php
-$host = "localhost";
-$user = "your_cpanel_db_user";
-$pass = "your_cpanel_db_password";
-$db   = "your_cpanel_db_name";
-```
-
-6. Access your site at:
-
-```
-https://yourdomain.com/care
-```
-
-### ✅ Heroku Deployment (Optional):
-
-- Use the [Heroku PHP Buildpack](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-php).
-- Set up ClearDB (MySQL) addon for database hosting.
-- Upload code via Heroku CLI or GitHub integration.
-- Update `db.php` with ClearDB credentials.
-
-### ✅ Vercel/Netlify:
-
-- Not recommended for native PHP/MySQL.
-- Use for frontend or serverless functions only.
+1. Install **XAMPP** and start **Apache** & **MySQL**
+2. Clone or copy the project into `htdocs` folder
+3. Import `hms.sql` from `phpMyAdmin` into a new database named `hms`
+4. Update `include/config.php` with your local DB credentials if necessary
+5. Visit `http://localhost/Care/index.php`
 
 ---
 
-## 🔐 Login Credentials (Sample)
+## ✅ Features Summary
 
-| Role    | Email                          | Password   |
-|---------|---------------------------------|------------|
-| **Admin**   | admin@care.com   | `admin123`   |
-| **Doctor**  | doctor@care.com | `doctor123`  |
-| **Patient** | patient@care.com | `patient123` *(or self-register)* |
-
----
-
-## 📘 Usage
-
-- **Admin:** Manage doctors, patients, appointments, and hospital announcements.
-- **Doctor:** Check and manage appointments, update schedules.
-- **Patient:** Register, book, and manage appointments.
+* Patient Medical History Tracker
+* Secure Role-Based Authentication
+* Dynamic Blog System for Health Tips
+* Admin Contact Response System
+* Multi-city Support for Records
+* Appointment Management (Direct & Request-based)
 
 ---
 
-## 🖼️ Screenshots
+## 🔒 Security Notes
 
-> *(Insert relevant screenshots here for better clarity.)*
-
----
-
-## 🔧 Troubleshooting
-
-| Issue                                  | Solution                                       |
-|-----------------------------------------|------------------------------------------------|
-| Database connection error               | Check `db.php` credentials and server DB info. |
-| CSS/JS not loading                      | Verify correct folder structure and file paths.|
-| 500 Internal Server Error               | Check `.htaccess` file and PHP version. |
-| Cannot import database                  | Check SQL file and server limits. |
+* Sessions are used for user authentication
+* Passwords stored using MD5 (recommended to upgrade to `bcrypt` or `argon2`)
+* Basic input validation included
 
 ---
 
-## 🤝 Contributing
+## 📌 License
 
-Contributions are welcome!
-
-1. Fork the repository: [Fork Here](https://github.com/fatima-897/CARE/fork)
-2. Create your branch: `git checkout -b feature/FeatureName`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin feature/FeatureName`
-5. Open a Pull Request
-
-For major changes, please open an issue first to discuss what you would like to change.
-
----
-
-## 📄 License
-
-This project is developed for **educational purposes**. Redistribution, modification, or commercial use is **not permitted** without explicit authorization.
-
----
-
-## 🚀 Live Demo (Optional)
-
-> *If deployed, provide the URL here.*
-
-```
-https://yourdomain.com/care
-```
+This project is part of the **eProject submission** for Aptech Pakistan and is shared for academic and learning purposes only.
