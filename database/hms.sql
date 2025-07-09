@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2025 at 02:27 PM
+-- Generation Time: Jul 09, 2025 at 03:41 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -279,9 +279,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `description`, `category`, `subcategory`, `tags`, `status`, `created_at`) VALUES
-(1, 'Do You Know the ABCs of Health Care?', 'Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt ut labore etmis dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris.\r\n\r\n', 'apple', 'heathy foods', '#healthyfood ,#carehospital', 'active', '2025-07-06 23:04:36'),
-(2, 'Do You Know the ABCs of Health Care?', 'Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt ut labore etmis dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris.\r\n\r\n', 'apple', 'heathy foods', '#healthyfood ,#carehospital', 'active', '2025-07-06 23:07:08'),
-(4, 'Do You Know the ABCs of Health Care?', 'Lorem ipsum dolor sit amet, consectetur em adipiscing elit, sed do eiusmod tempor incididunt ut labo...', 'apple', 'heathy foods', 'health, fitness,care', 'active', '2025-07-06 23:26:12');
+(9, 'AI in Healthcare: Transforming Diagnosis with Technology | CARE Hospital', 'Artificial Intelligence (AI) is revolutionizing the way diseases are diagnosed. From analyzing medical images to predicting potential health risks, AI-powered systems are helping doctors deliver faster and more accurate diagnoses than ever before.\r\n\r\nAt CARE Hospital, we are exploring AI solutions that integrate seamlessly with our Health Management System (HMS). These tools can assist in identifying early signs of diseases such as cancer, diabetes, and heart conditions — sometimes even before symptoms appear.\r\n\r\nThis breakthrough in predictive diagnostics means improved patient outcomes, reduced human error, and more personalized treatment plans. Our goal is to make healthcare smarter, safer, and more proactive. Discover how AI is helping doctors detect diseases earlier and more accurately. Learn how CARE Hospital is integrating AI into diagnostics to improve patient care.', 'Medical Technology', 'Artificial Intelligence', '#AIinHealthcare, #MedicalInnovation, #EarlyDiagnosis, #CAREHospital, #HealthTech', 'active', '2025-07-09 13:32:46'),
+(10, '10 Medical Symptoms You Should Never Ignore | CARE Hospital', 'Chest pain, shortness of breath, or confusion? Learn 10 urgent symptoms that need immediate medical attention. Stay informed with CARE Hospital’s emergency checklist.\r\nNot every symptom should be ignored. Knowing when to seek immediate medical attention can be the difference between life and death.\r\n\r\nHere are 10 warning signs you should never ignore:\r\n\r\n1. Sudden chest pain or pressure\r\n\r\n2. Difficulty breathing\r\n\r\n3. Uncontrolled bleeding\r\n\r\n4. High fever (especially in children or the elderly)\r\n\r\n5. Sudden weakness or numbness (especially on one side)\r\n\r\n6. Seizures\r\n\r\n7. Severe abdominal pain\r\n\r\n8. Loss of consciousness\r\n\r\n9. Confusion or disorientation\r\n\r\n10. Persistent vomiting or dehydration\r\n\r\nIf you or a loved one experiences any of these symptoms, head to the nearest emergency room or call CARE Hospital immediately. Our Emergency Care Unit is open 24/7 with trained staff and advanced life-saving equipment.\r\n\r\nYour life matters — don’t delay when symptoms are severe.', 'Health Awareness', 'Emergency Care', '#EmergencyCare, #CAREHospital, #HealthAwareness, #KnowTheSigns, #PatientSafety', 'active', '2025-07-09 13:36:04'),
+(11, 'Robotic Surgery at CARE Hospital | Safer, Smarter, and Less Invasive', 'CARE Hospital introduces robotic-assisted surgery for faster recovery and better precision. Discover how cutting-edge surgical technology is improving patient outcomes.\r\nRobotic-assisted surgery is transforming the way operations are performed — offering unmatched precision, reduced recovery time, and improved patient outcomes.\r\n\r\nAt CARE Hospital, we’ve introduced robotic surgical systems to assist our surgeons in performing complex procedures with enhanced control and minimal invasiveness. These systems allow surgeons to operate through tiny incisions using robotic arms, high-definition 3D cameras, and advanced instruments that mimic human movement — but with greater accuracy and stability.\r\n\r\nRobotic surgery is especially beneficial in:\r\n\r\nUrological surgeries (e.g., prostatectomy)\r\n\r\nGynecological procedures\r\n\r\nCardiac and thoracic operations\r\n\r\nGastrointestinal and bariatric surgeries\r\n\r\nPatients experience:\r\n\r\nLess blood loss\r\n\r\nReduced pain\r\n\r\nShorter hospital stays\r\n\r\nFaster return to normal activities\r\n\r\nThis is not science fiction — it\'s the future of surgery, and it\'s happening now at CARE Hospital.', 'Medical Innovation', 'Advanced Surgery', '#RoboticSurgery, #MedicalInnovation, #CAREHospital, #AdvancedSurgery, #MinimalInvasive', 'active', '2025-07-09 13:39:17');
 
 -- --------------------------------------------------------
 
@@ -300,9 +300,9 @@ CREATE TABLE `post_images` (
 --
 
 INSERT INTO `post_images` (`id`, `post_id`, `image_name`) VALUES
-(1, 1, 'blog-01.jpg'),
-(2, 2, 'blog-01.jpg'),
-(3, 4, 'blog-03.jpg');
+(10, 9, 'news-03.jpg'),
+(11, 10, 'news-02.jpg'),
+(12, 11, 'news-01.jpg');
 
 -- --------------------------------------------------------
 
@@ -650,13 +650,13 @@ ALTER TABLE `doctorspecilization`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `post_images`
 --
 ALTER TABLE `post_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tblcontactus`
