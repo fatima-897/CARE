@@ -10,7 +10,7 @@ CARE is a web-based Hospital Management System built to streamline patient manag
 
 ---
 
-## 👥 Team Members – Aptech Pakistan
+## 👥 Team Members 
 
 * **Fatima Nahid** *(Team Lead)*
 * Javeria
@@ -22,9 +22,16 @@ CARE is a web-based Hospital Management System built to streamline patient manag
 
 ## 📸 Screenshots
 
+## Home Page
 ![homepage](https://github.com/fatima-897/CARE/blob/main/blob/main/screenshots/homepage.png)
+
+## Admin Panel
 ![admin dashboard](https://github.com/fatima-897/CARE/blob/main/blob/main/screenshots/admin_dashboard.png)
+
+## Doctor Panel
 ![doctor panel](https://github.com/fatima-897/CARE/blob/main/blob/main/screenshots/doctor_dashboard.png)
+
+## Patients Panel
 ![patient](https://github.com/fatima-897/CARE/blob/main/blob/main/screenshots/patient_view.png)
 
 ## 🧰 Tech Stack
@@ -234,7 +241,3 @@ CARE/
 - Doctor: `anujk123@test.com` / `Test@123`
 
 ---
-
-## 📌 License
-
-This project is part of the **eProject submission** for Aptech Pakistan and is shared for academic and learning purposes only.
