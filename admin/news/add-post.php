@@ -54,9 +54,9 @@
                     }
                 }
 
-                echo "<div class='alert alert-success'>Blog post added successfully!</div>";
+                echo "<div class='container alert alert-success'>Blog post added successfully!</div>";
             } else {
-                echo "<div class='alert alert-danger'>Error saving blog post.</div>";
+                echo "<div class='container alert alert-danger'>Error saving blog post.</div>";
             }
         }
         ?>

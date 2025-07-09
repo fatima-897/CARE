@@ -53,8 +53,13 @@
                                 <li><a href="cities/add-cities.php">Add City</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="news/add-post.php"><i class="fa fa-commenting-o"></i> <span> Blog News</span></a>
+                        <li class="submenu">
+                            <a href="#"><i class="fa fa-commenting-o"></i> <span>Blog News</span> <span
+                                    class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="news/add-post.php">Add Post</a></li>
+                                <li><a href="news/manage-news.php">View Post</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="patients/patient-search.php"><i class="fa fa-search"></i> <span>Patient
