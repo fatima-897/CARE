@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2025 at 12:36 PM
+-- Generation Time: Jul 09, 2025 at 02:27 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -68,7 +68,10 @@ CREATE TABLE `appointment` (
 INSERT INTO `appointment` (`id`, `doctorSpecialization`, `doctorId`, `userId`, `consultancyFees`, `appointmentDate`, `appointmentTime`, `postingDate`, `userStatus`, `doctorStatus`, `updationDate`) VALUES
 (1, 'ENT', 1, 1, 500, '2024-05-30', '9:15 AM', '2024-05-15 03:42:11', 1, 1, NULL),
 (2, 'Endocrinologists', 2, 2, 800, '2024-05-31', '2:45 PM', '2024-05-16 09:08:54', 1, 1, NULL),
-(3, 'General Surgery', 8, 4, 5000, '2-3-2025', '2.00', '2025-06-19 08:35:43', 1, 1, NULL);
+(3, 'General Surgery', 8, 4, 5000, '2-3-2025', '2.00', '2025-06-19 08:35:43', 1, 1, NULL),
+(4, 'General Surgery', 0, 1, 800, '03-Oct-2025', '07:00 pm', '2025-07-09 00:43:45', 1, 1, NULL),
+(5, 'ENT', 1, 1, 500, '2000-10-02', '14:50', '2025-07-09 00:49:16', 1, 1, NULL),
+(6, 'Pediatrics', 4, 6, 700, '2025-07-09', '19:00', '2025-07-09 00:52:38', 1, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -82,18 +85,22 @@ CREATE TABLE `appointment_requests` (
   `number` varchar(20) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `appointment_date` date DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `reviewed` tinyint(1) DEFAULT 0,
+  `replied_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `appointment_requests`
 --
 
-INSERT INTO `appointment_requests` (`id`, `name`, `number`, `email`, `appointment_date`, `created_at`) VALUES
-(1, 'Jescie Adams', '11834021488', 'zizaxynad@mail.com', '2025-11-17', '2025-07-06 22:30:42'),
-(2, 'Ciaran Mcfarland', '42633444841', 'tuqawyf@mail.com', '2025-07-07', '2025-07-06 22:31:17'),
-(3, 'Casey Kane', '39285695347', 'daniflay@gmail.com', '2025-07-07', '2025-07-06 22:33:34'),
-(4, 'Mehru nesa', '99267747409', 'mehrunesa@mail.com', '2025-07-07', '2025-07-06 22:37:11');
+INSERT INTO `appointment_requests` (`id`, `name`, `number`, `email`, `appointment_date`, `created_at`, `reviewed`, `replied_at`) VALUES
+(1, 'Jescie Adams', '11834021488', 'zizaxynad@mail.com', '2025-11-17', '2025-07-06 22:30:42', 0, NULL),
+(2, 'Ciaran Mcfarland', '42633444841', 'tuqawyf@mail.com', '2025-07-07', '2025-07-06 22:31:17', 0, NULL),
+(3, 'Casey Kane', '39285695347', 'daniflay@gmail.com', '2025-07-07', '2025-07-06 22:33:34', 0, NULL),
+(4, 'Mehru nesa', '99267747409', 'mehrunesa@mail.com', '2025-07-07', '2025-07-06 22:37:11', 0, NULL),
+(5, 'Steel Beck', '56675675656217', 'mycyrehyl@mail.com', '2025-07-08', '2025-07-09 00:50:48', 0, NULL),
+(6, 'Boris Contreras', '894798548646', 'fagis63524@iamtile.com', '2025-07-09', '2025-07-09 11:12:32', 1, '2025-07-09 16:47:18');
 
 -- --------------------------------------------------------
 
@@ -212,7 +219,8 @@ INSERT INTO `doctorslog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logou
 (8, 9, 'ghani@gmail.com', 0x3a3a3100000000000000000000000000, '2025-06-19 11:34:44', '19-06-2025 05:06:16 PM', 1),
 (9, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '2025-06-22 20:11:05', NULL, 1),
 (10, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '2025-07-02 08:22:16', '02-07-2025 01:53:20 PM', 1),
-(11, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '2025-07-07 23:02:46', NULL, 1);
+(11, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '2025-07-07 23:02:46', NULL, 1),
+(12, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '2025-07-08 20:20:22', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -247,25 +255,7 @@ INSERT INTO `doctorspecilization` (`id`, `specilization`, `creationDate`, `updat
 (13, 'Dermatologists', '2024-04-09 18:09:46', '2024-05-14 09:26:56'),
 (14, 'Endocrinologists', '2024-04-09 18:09:46', '2024-05-14 09:26:56'),
 (15, 'Neurologists', '2024-04-09 18:09:46', '2024-05-14 09:26:56'),
-(18, '	Dermatologists', '2025-06-19 11:28:46', NULL),
-(19, 'Phsycolojyst', '2025-07-02 21:56:12', NULL),
-(20, '', '2025-07-04 19:21:40', NULL),
-(21, '', '2025-07-04 19:22:37', NULL),
-(22, '', '2025-07-04 19:22:40', NULL),
-(23, '', '2025-07-04 19:22:42', NULL),
-(24, '', '2025-07-04 19:25:25', NULL),
-(25, '', '2025-07-04 19:27:55', NULL),
-(26, '', '2025-07-04 19:32:51', NULL),
-(27, '', '2025-07-04 19:33:40', NULL),
-(28, '', '2025-07-04 19:33:43', NULL),
-(29, '', '2025-07-04 19:33:46', NULL),
-(30, '', '2025-07-04 19:33:47', NULL),
-(31, '', '2025-07-04 19:34:46', NULL),
-(32, '', '2025-07-04 19:37:06', NULL),
-(33, '', '2025-07-04 19:37:59', NULL),
-(34, '', '2025-07-04 19:40:23', NULL),
-(35, 'Ophthalmology', '2025-07-04 19:41:07', NULL),
-(36, '', '2025-07-04 19:41:09', NULL);
+(35, 'Ophthalmology', '2025-07-04 19:41:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -345,7 +335,9 @@ INSERT INTO `tblcontactus` (`id`, `fullname`, `email`, `contactno`, `message`, `
 (6, '', '', 0, '', '2025-07-06 22:31:17', NULL, NULL, NULL),
 (7, '', '', 0, '', '2025-07-06 22:33:34', NULL, NULL, NULL),
 (8, 'Blaine Bowers', 'johndoe12@test.com', 6587465876, 'testing message', '2025-07-06 22:36:13', NULL, NULL, NULL),
-(9, '', '', 0, '', '2025-07-06 22:37:11', NULL, NULL, NULL);
+(9, '', '', 0, '', '2025-07-06 22:37:11', NULL, NULL, NULL),
+(10, '', '', 0, '', '2025-07-09 00:50:48', NULL, NULL, NULL),
+(11, '', '', 0, '', '2025-07-09 11:12:32', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -460,7 +452,13 @@ INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`,
 (12, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2025-07-07 23:01:31', NULL, 1),
 (13, 6, 'fatima12@mail.com', 0x3a3a3100000000000000000000000000, '2025-07-08 08:45:55', NULL, 1),
 (14, 6, 'fatima12@mail.com', 0x3a3a3100000000000000000000000000, '2025-07-08 09:03:09', NULL, 1),
-(15, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2025-07-08 09:51:05', NULL, 1);
+(15, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2025-07-08 09:51:05', NULL, 1),
+(16, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2025-07-08 20:36:43', NULL, 1),
+(17, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2025-07-08 20:40:05', NULL, 1),
+(18, NULL, 'fatima12@mail.com', 0x3a3a3100000000000000000000000000, '2025-07-09 00:34:37', NULL, 0),
+(19, 6, 'fatima12@mail.com', 0x3a3a3100000000000000000000000000, '2025-07-09 00:34:53', NULL, 1),
+(20, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2025-07-09 00:42:46', NULL, 1),
+(21, 6, 'fatima12@mail.com', 0x3a3a3100000000000000000000000000, '2025-07-09 00:52:12', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -610,13 +608,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `appointment_requests`
 --
 ALTER TABLE `appointment_requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `cities`
@@ -640,7 +638,7 @@ ALTER TABLE `doctors`
 -- AUTO_INCREMENT for table `doctorslog`
 --
 ALTER TABLE `doctorslog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `doctorspecilization`
@@ -664,7 +662,7 @@ ALTER TABLE `post_images`
 -- AUTO_INCREMENT for table `tblcontactus`
 --
 ALTER TABLE `tblcontactus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tblmedicalhistory`
@@ -688,7 +686,7 @@ ALTER TABLE `tblpatient`
 -- AUTO_INCREMENT for table `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
