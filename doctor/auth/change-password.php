@@ -39,7 +39,7 @@ if (strlen($_SESSION['id']) == 0) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
-    <title>Admin | Change Password</title>
+    <title>Doctor | Change Password</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -48,10 +48,34 @@ if (strlen($_SESSION['id']) == 0) {
 <body>
     <div class="main-wrapper">
 
-        <?php include('../includes/navheader.php'); ?>
-        <?php include('../includes/sidebar.php'); ?>
-
-
+        <div class="header">
+            <div class="header-left">
+                <a href="#" class="logo">
+                    <img src="../assets/images/logo.png" width="35" height="35" alt="care">
+                </a>
+            </div>
+            <ul class="nav user-menu float-right">
+                <li class="nav-item dropdown has-arrow">
+                    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
+                        <span class="user-img">
+                            <img class="rounded-circle" src="../assets/images/user.jpg" width="24" alt="Doctor">
+                            <span class="status online"></span>
+                        </span>
+                        <span>Doctor</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="../auth/logout.php">Logout</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="dropdown mobile-user-menu float-right">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
+                        class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="../auth/logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
         <div class="page-wrapper">
             <div class="content">
                 <div class="row">

@@ -86,8 +86,16 @@ if (strlen($_SESSION['id'] == 0)) {
                             </li>
 
                             <li>
-                                <a href="search.php"><i class="fa fa-search"></i> <span>Search</span></a>
+                                <a href="search-patient.php"><i class="fa fa-search"></i> <span>Search</span></a>
                             </li>
+                             <li class="menu-title">Settings</li>
+                               <li>
+                                   <a href="auth/change-password.php"><i class="fa fa-lock"></i> <span>Change
+                                           Password</span></a>
+                               </li>
+                               <li>
+                                   <a href="auth/logout.php"><i class="fa fa-sign-out"></i> <span>Logout</span></a>
+                               </li>
                         </ul>
                     </div>
                 </div>
