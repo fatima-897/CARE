@@ -98,6 +98,10 @@ $attended = mysqli_fetch_array(mysqli_query($con, "SELECT COUNT(*) AS attended F
                             <a href="appointments/appointment-history.php"><i class="fa fa-calendar"></i>
                                 <span>Appointments</span></a>
                         </li>
+                        <li>
+                            <a href="appointments/manage-appointment-request.php"><i class="fa fa-calendar"></i>
+                                <span>ManageAppointments</span></a>
+                        </li>
                         <li class="submenu">
                             <a href="#"><i class="fa fa-envelope"></i> <span>Contact Queries</span> <span
                                     class="menu-arrow"></span></a>
