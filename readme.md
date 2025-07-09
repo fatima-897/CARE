@@ -2,6 +2,8 @@
 
 **Tagline**: *Streamlining Healthcare, One Click at a Time*
 
+---
+
 ## 📌 Project Overview
 
 CARE is a web-based Hospital Management System built to streamline patient management, appointment scheduling, doctor allocation, and administrative functions within a healthcare setup. The system supports three user roles: **Admin**, **Doctor**, and **Patient**, each with specific access controls and capabilities. It automates critical operations to improve efficiency, reduce manual errors, and enhance the user experience in hospitals and clinics.
@@ -15,6 +17,23 @@ CARE is a web-based Hospital Management System built to streamline patient manag
 * Abdul Ghani
 * Huzaifa
 * Ashar
+
+---
+
+## 📸 Screenshots
+
+### Homepage  
+![homepage](https://github.com/yourusername/CARE/blob/main/screenshots/homepage.png?raw=true)
+
+### Admin Dashboard  
+![admin dashboard](https://github.com/yourusername/CARE/blob/main/screenshots/admin_dashboard.png?raw=true)
+
+### Doctor Panel  
+![doctor panel](https://github.com/yourusername/CARE/blob/main/screenshots/doctor_dashboard.png?raw=true)
+
+### Patient Interface  
+![patient](https://github.com/yourusername/CARE/blob/main/screenshots/patient_view.png?raw=true)
+
 
 ---
 
@@ -127,10 +146,10 @@ Patient:
 CARE/
 ├── admin/
 │   ├── appointments/
-|   ├── assets/
-|   ├── auth/
-|   ├── cities
-|   ├── doctors/
+│   ├── assets/
+│   ├── auth/
+│   ├── cities/
+│   ├── doctors/
 │   ├── includes/
 │   ├── news/
 │   ├── patients/
@@ -147,8 +166,8 @@ CARE/
 │   ├── images/
 ├── database/ 
 ├── doctor/
-|   ├── assets/
-|   ├── auth/
+│   ├── assets/
+│   ├── auth/
 │   ├── includes/
 │   ├── master/
 │   ├── vendor/
@@ -165,7 +184,7 @@ CARE/
 ├── master/
 ├── patient/
 │   ├── assets/
-|   ├── auth/
+│   ├── auth/
 │   ├── includes/
 │   ├── vendor/
 │   ├── appointment-history.php
@@ -175,7 +194,7 @@ CARE/
 │   └── manage-history.php
 ├── vendor/
 ├── assets/
-└── index.php/
+└── index.php
 ```
 
 ---
@@ -208,20 +227,23 @@ CARE/
 * Basic input validation included
 
 ---
-How to run the Auto/Taxi Stand Management Project Using PHP and MySQL
 
-. Download the zip file
-2. Extract the file and copy hospital folder
-3.Paste inside root directory(for xampp xampp/htdocs, for wamp wamp/www, for lamp var/www/html)
-4. Open PHPMyAdmin (http://localhost/phpmyadmin)
-5. Create a database with name hms
-6. Import hms.sql file(given inside the zip package in SQL file folder)
-7.Run the script http://localhost/hospital (frontend)
-Login Details
-Login Details for admin : admin/Test@12345
-Login Details for Patient: johndoe12@test.com/Test@123
-Login Details for Doctor: anujk123@test.com/Test@123
+## How to run the Auto/Taxi Stand Management Project Using PHP and MySQL
 
+1. Download the zip file  
+2. Extract the file and copy hospital folder  
+3. Paste inside root directory (for XAMPP: xampp/htdocs, for WAMP: wamp/www, for LAMP: var/www/html)  
+4. Open PHPMyAdmin (http://localhost/phpmyadmin)  
+5. Create a database with name `hms`  
+6. Import `hms.sql` file (given inside the zip package in SQL file folder)  
+7. Run the script http://localhost/hospital (frontend)
+
+**Login Details:**
+- Admin: `admin` / `Test@12345`
+- Patient: `johndoe12@test.com` / `Test@123`
+- Doctor: `anujk123@test.com` / `Test@123`
+
+---
 
 ## 📌 License
 
