@@ -147,6 +147,20 @@ CARE/
 │   ├── images/
 ├── database/ 
 ├── doctor/
+|   ├── assets/
+|   ├── auth/
+│   ├── includes/
+│   ├── master/
+│   ├── vendor/
+│   ├── add-patient.php
+│   ├── appointment-history.php
+│   ├── dashboard.php
+│   ├── edit-patient.php
+│   ├── edit-profile.php
+│   ├── index.php
+│   ├── manage-patient.php
+│   ├── search-patient.php
+│   └── view-patient.php
 ├── include/
 ├── master/
 ├── patient/
