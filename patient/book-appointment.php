@@ -1,10 +1,7 @@
 <?php
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-include('includes/config.php');
-include('includes/checklogin.php');
+include("includes/config.php");
+include("includes/checklogin.php");
 check_login();
 
 $msg = "";
@@ -20,7 +17,7 @@ if (isset($_POST['submit'])) {
     $docstatus = 1;
 
     $query = mysqli_query($con, "INSERT INTO appointment(doctorSpecialization, doctorId, userId, consultancyFees, appointmentDate, appointmentTime, userStatus, doctorStatus)
-                                 VALUES('$specilization', '$doctorid', '$userid', '$fees', '$appdate', '$time', '$userstatus', '$docstatus')");
+                             VALUES('$specilization', '$doctorid', '$userid', '$fees', '$appdate', '$time', '$userstatus', '$docstatus')");
 
     if ($query) {
         $msg = "Your appointment has been successfully booked.";
@@ -40,6 +37,8 @@ if (isset($_POST['submit'])) {
     <title>Book Appointment | Patient</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
         @media(max-width: 768px) {
@@ -89,58 +88,75 @@ if (isset($_POST['submit'])) {
         </a>
         <a href="dashboard.php" class="text-white text-decoration-none">Back to Dashboard</a>
     </div>
-    <!-- Main Content -->
-    <div class="container bg-white mt-5 pt-5 rounded shadow-sm">
-        <h4 class="fw-bold mb-4 text-primary">Book an Appointment</h4>
-
-        <?php if (!empty($msg)): ?>
-            <div class="alert alert-info"><?php echo htmlentities($msg); ?></div>
-        <?php endif; ?>
-
-        <form method="POST">
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label">Doctor Specialization</label>
-                    <select name="Doctorspecialization" class="form-control" onchange="getdoctor(this.value);" required>
-                        <option value="">Select Specialization</option>
-                        <?php
-                        $ret = mysqli_query($con, "SELECT * FROM doctorspecilization");
-                        while ($row = mysqli_fetch_array($ret)) {
-                            echo '<option value="' . htmlentities($row['specilization']) . '">' . htmlentities($row['specilization']) . '</option>';
-                        }
-                        ?>
-                    </select>
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label">Select Doctor</label>
-                    <select name="doctor" class="form-control" id="doctor" onchange="getfee(this.value);" required>
-                        <option value="">Select Doctor</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label">Consultancy Fees</label>
-                    <input type="text" name="fees" class="form-control" id="fees" readonly>
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label">Appointment Date</label>
-                    <input type="date" name="appdate" class="form-control" required>
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label">Appointment Time</label>
-                    <input type="time" name="apptime" class="form-control" required>
-                </div>
-
-                <div class="col-12 mt-4">
-                    <button type="submit" name="submit" class="btn btn-primary">Book Appointment</button>
+    <div class="container mt-4">
+        <!-- Breadcrumb Navigation -->
+        <section class="mt-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Book Appointment</li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
-        </form>
-    </div>
+        </section>
 
+        <!-- Booking Form -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="border rounded p-4 shadow-sm bg-white">
+                    <h4 class="mb-4 text-primary">Book an Appointment</h4>
+
+                    <?php if (!empty($msg)): ?>
+                        <div class="alert alert-info"><?php echo htmlentities($msg); ?></div>
+                    <?php endif; ?>
+
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label class="form-label">Doctor Specialization</label>
+                            <select name="Doctorspecialization" class="form-select" onchange="getdoctor(this.value);" required>
+                                <option value="">Select Specialization</option>
+                                <?php
+                                $ret = mysqli_query($con, "SELECT * FROM doctorspecilization");
+                                while ($row = mysqli_fetch_array($ret)) {
+                                    echo '<option value="' . htmlentities($row['specilization']) . '">' . htmlentities($row['specilization']) . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Select Doctor</label>
+                            <select name="doctor" class="form-select" id="doctor" onchange="getfee(this.value);" required>
+                                <option value="">Select Doctor</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Consultancy Fees</label>
+                            <input type="text" name="fees" class="form-control" id="fees" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Appointment Date</label>
+                            <input type="date" name="appdate" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Appointment Time</label>
+                            <input type="time" name="apptime" class="form-control" required>
+                        </div>
+
+                        <button type="submit" name="submit" class="btn btn-primary">
+                            <i class="fa fa-calendar-check"></i> Book Appointment
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <?php include('includes/footer.php'); ?>
@@ -148,27 +164,24 @@ if (isset($_POST['submit'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        function getdoctor(val) {
-            $.ajax({
-                type: "POST",
-                url: "get_doctor.php",
-                data: 'specilizationid=' + val,
-                success: function(data) {
-                    $("#doctor").html(data);
-                }
-            });
+       function getdoctor(val) {
+    $.ajax({
+        type: "POST",
+        url: "get_doctor.php",
+        data: 'specilizationid=' + val,
+        success: function(data) {
+            $("#doctor").html(data);
         }
-    </script>
+    });
+}
 
-
-    <script>
         function getfee(val) {
             $.ajax({
                 type: "POST",
                 url: "get_doctor.php",
                 data: 'doctor=' + val,
                 success: function(data) {
-                    $("#fees").html(data);
+                    $("#fees").val(data);
                 }
             });
         }

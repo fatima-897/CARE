@@ -46,10 +46,14 @@ if (strlen($_SESSION['id'] == 0)) {
                 }
 
                 .table td {
-                    text-align: left;
+                    text-align: right;
+                    white-space: wrap;
                     position: relative;
                 }
 
+                .table th {
+                    white-space: wrap;
+                }
                 .table td::before {
                     content: attr(data-label);
                     position: absolute;
