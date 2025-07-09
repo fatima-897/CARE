@@ -22,7 +22,7 @@ CARE is a web-based Hospital Management System built to streamline patient manag
 
 ## 📸 Screenshots
 
-![homepage](https://raw.githubusercontent.com/fatima-897/CARE/main/screenshots/homepage.png)
+![homepage](https://github.com/fatima-897/CARE/blob/main/blob/main/screenshots/homepage.png)
 ![admin dashboard](https://raw.githubusercontent.com/fatima-897/CARE/main/screenshots/admin_dashboard.png)
 ![doctor panel](https://raw.githubusercontent.com/fatima-897/CARE/main/screenshots/doctor_dashboard.png)
 ![patient](https://raw.githubusercontent.com/fatima-897/CARE/main/screenshots/patient_view.png)
