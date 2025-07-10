@@ -80,10 +80,6 @@ echo "<script>window.location.href='index.php'</script>";
                                 required>
                         </div>
 
-                        <div class="form-group text-left">
-                            Don't have an account yet? <a href="auth/register.php">Create an account</a>
-                        </div>
-
                         <div class="form-group text-center">
                             <button type="submit" name="submit" class="btn btn-primary account-btn">Login</button>
                         </div>
