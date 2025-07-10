@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 include("includes/config.php");
-error_reporting(0);
+
 if(isset($_POST['submit']))
 {
 $uname=$_POST['username'];
