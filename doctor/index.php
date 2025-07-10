@@ -69,8 +69,8 @@ echo "<script>window.location.href='index.php'</script>";
                         </p>
 
                         <div class="form-group">
-                            <label>Username</label>
-                            <input name="username" type="text" class="form-control" placeholder="Enter username"
+                            <label>Email</label>
+                            <input name="username" type="text" class="form-control" placeholder="Enter Email"
                                 required>
                         </div>
 
