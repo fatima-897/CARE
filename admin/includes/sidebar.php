@@ -12,7 +12,7 @@
                             <ul style="display: none;">
                                 <li><a href="doctors/doctor-specialization.php">Doctor Specialization</a></li>
                                 <li><a href="doctors/add-doctor.php">Add Doctor</a></li>
-                                <li><a href="doctors/edit-doctor-specialization.php">Edit Doctors Specialization</a></li>
+                                <li><a href="doctors/manage-doctors.php">Manage Doctors Specialization</a></li>
                                 <li><a href="doctors/doctor-logs.php">Doctor logs</a></li>
                             </ul>
                         </li>
