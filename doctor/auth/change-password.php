@@ -3,34 +3,40 @@ session_start();
 include('../includes/config.php');
 include('../includes/checklogin.php');
 
-if (strlen($_SESSION['id']) == 0) {
-    header('location:logout.php');
-} else {
-    date_default_timezone_set('Asia/Karachi');
-    $currentTime = date('d-m-Y h:i:s A', time());
+date_default_timezone_set('Asia/Karachi');
 
-    if (isset($_POST['submit'])) {
-        $cpass = $_POST['current_password'];
-        $npass = $_POST['new_password'];
-        $cfpass = $_POST['confirm_password'];
-        $uname = $_SESSION['login'];
+if (isset($_POST['submit'])) {
+    $currentTime = date('Y-m-d H:i:s');
 
-        if ($npass != $cfpass) {
-            $_SESSION['msg'] = "❌ New Password and Confirm Password do not match!";
-        } else {
-            $sql = mysqli_query($con, "SELECT password FROM admin WHERE username='$uname' AND password='$cpass'");
-            $num = mysqli_fetch_array($sql);
+    $cpass = md5($_POST['current_password']);
+    $npass = md5($_POST['new_password']);
+    $cfpass = md5($_POST['confirm_password']);
 
-            if ($num > 0) {
-                mysqli_query($con, "UPDATE admin SET password='$npass', updationDate='$currentTime' WHERE username='$uname'");
+    $did = $_SESSION['id']; // same as used in your original reference
+
+    if ($_POST['new_password'] !== $_POST['confirm_password']) {
+        $_SESSION['msg'] = "❌ New Password and Confirm Password do not match!";
+    } else {
+        $sql = mysqli_query($con, "SELECT password FROM doctors WHERE password='$cpass' AND id='$did'");
+        $row = mysqli_fetch_array($sql);
+
+        if ($row) {
+            $update = mysqli_query($con, "UPDATE doctors SET password='$npass', updationDate='$currentTime' WHERE id='$did'");
+
+            if ($update) {
                 $_SESSION['msg'] = "✅ Password Changed Successfully!";
             } else {
-                $_SESSION['msg'] = "❌ Current Password is incorrect!";
+                $_SESSION['msg'] = "❌ Failed to update password in DB.";
             }
+        } else {
+            $_SESSION['msg'] = "❌ Current Password is incorrect!";
         }
     }
 }
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +44,7 @@ if (strlen($_SESSION['id']) == 0) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
     <title>Doctor | Change Password</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
