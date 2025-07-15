@@ -1,6 +1,7 @@
 # CARE – Hospital Management System
 
-**Tagline**: *Streamlining Healthcare, One Click at a Time*
+**Tagline**: 
+*Streamlining Healthcare, One Click at a Time*
 
 ---
 

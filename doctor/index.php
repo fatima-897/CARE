@@ -3,34 +3,29 @@ session_start();
 error_reporting(0);
 include("includes/config.php");
 
-if(isset($_POST['submit']))
-{
-$uname=$_POST['username'];
-$dpassword=md5($_POST['password']);	
-$ret=mysqli_query($con,"SELECT * FROM doctors WHERE docEmail='$uname' and password='$dpassword'");
-$num=mysqli_fetch_array($ret);
-if($num>0)
-{
-$_SESSION['dlogin']=$_POST['username'];
-$_SESSION['id']=$num['id'];
-$uid=$num['id'];
-$uip=$_SERVER['REMOTE_ADDR'];
-$status=1;
-//Code Logs
-$log=mysqli_query($con,"insert into doctorslog(uid,username,userip,status) values('$uid','$uname','$uip','$status')");
+if (isset($_POST['submit'])) {
+    $uname = $_POST['username'];
+    $dpassword = md5($_POST['password']);
+    $ret = mysqli_query($con, "SELECT * FROM doctors WHERE docEmail='$uname' and password='$dpassword'");
+    $num = mysqli_fetch_array($ret);
+    if ($num > 0) {
+        $_SESSION['dlogin'] = $_POST['username'];
+        $_SESSION['id'] = $num['id'];
+        $uid = $num['id'];
+        $uip = $_SERVER['REMOTE_ADDR'];
+        $status = 1;
+        //Code Logs
+        $log = mysqli_query($con, "insert into doctorslog(uid,username,userip,status) values('$uid','$uname','$uip','$status')");
 
-header("location:dashboard.php");
-}
-else
-{
+        header("location:dashboard.php");
+    } else {
 
-$uip=$_SERVER['REMOTE_ADDR'];
-$status=0;
-mysqli_query($con,"insert into doctorslog(username,userip,status) values('$uname','$uip','$status')");
-echo "<script>alert('Invalid username or password');</script>";
-echo "<script>window.location.href='index.php'</script>";
-
-}
+        $uip = $_SERVER['REMOTE_ADDR'];
+        $status = 0;
+        mysqli_query($con, "insert into doctorslog(username,userip,status) values('$uname','$uip','$status')");
+        echo "<script>alert('Invalid username or password');</script>";
+        echo "<script>window.location.href='index.php'</script>";
+    }
 }
 ?>
 
@@ -99,7 +94,7 @@ echo "<script>window.location.href='index.php'</script>";
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/login.js"></script>
     <script>
-        jQuery(document).ready(function () {
+        jQuery(document).ready(function() {
             Main.init();
             Login.init();
         });
