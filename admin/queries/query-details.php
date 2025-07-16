@@ -14,7 +14,7 @@ if (strlen($_SESSION['id'] == 0)) {
         $query = mysqli_query($con, "update tblcontactus set  AdminRemark='$adminremark',IsRead='$isread' where id='$qid'");
         if ($query) {
             echo "<script>alert('Admin Remark updated successfully.');</script>";
-            echo "<script>window.location.href ='read-query.php'</script>";
+            echo "<script>window.location.href ='read-queries.php'</script>";
         }
     }
 ?>
