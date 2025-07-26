@@ -217,6 +217,12 @@ CARE/
 * Appointment Management (Direct & Request-based)
 
 ---
+## 🚀 Versioning
+
+| Version | Status | Description |
+|---------|--------|-------------|
+| 1.0     | ✅ Released | Core hospital functions – admin, doctor, patient roles, appointment booking, and data handling. |
+| 2.0     | 🛠️ Planned | Feature-rich upgrade with localization, PDF export, chat, pharmacy billing, and SMS integration. |
 
 ## 🔒 Security Notes
 
